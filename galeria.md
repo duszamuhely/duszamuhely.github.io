@@ -5,11 +5,17 @@ permalink: /galeria/
 ---
 
 <style>
+.gallery-section {
+  margin-bottom: 3rem;
+}
+.gallery-section h2 {
+  margin-bottom: 0.5rem;
+}
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 12px;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .gallery-grid img {
   width: 100%;
@@ -80,7 +86,7 @@ permalink: /galeria/
 }
 </style>
 
-<div class="gallery-grid" id="gallery-grid"></div>
+<div id="galleries-container"></div>
 
 <div id="lightbox">
   <button id="lightbox-close" aria-label="Bezárás">&times;</button>
@@ -90,30 +96,61 @@ permalink: /galeria/
 </div>
 
 <script>
-// Ide írd a képek fájlneveit az assets/gallery mappában
-const images = [
-  "kep1.jpg",
-  "kep2.jpg",
-  "kep3.jpg"
+// Minden galériához: cím, mappa neve, és a fájlnevek (ugyanaz a fájlnév kell
+// mindkét mappában – csak a mappa különbözteti meg a kicsi és nagy verziót).
+const galleries = [
+  {
+    title: "Bútorok",
+    folder: "butorok",
+    images: ["kep1.jpg", "kep2.jpg", "kep3.jpg"]
+  },
+  {
+    title: "Fa díszek",
+    folder: "diszek",
+    images: ["kep1.jpg", "kep2.jpg"]
+  }
 ];
 
-const basePath = "/assets/gallery/";
+// A kicsinyített képek ide kerülnek: assets/gallery/thumbs/<folder>/<fájlnév>
+// Az eredeti (nagy) képek ide kerülnek:      assets/gallery/full/<folder>/<fájlnév>
+const thumbsPath = "/assets/gallery/thumbs/";
+const fullPath = "/assets/gallery/full/";
+
+let currentGallery = 0;
 let currentIndex = 0;
 
-const grid = document.getElementById('gallery-grid');
-images.forEach((file, i) => {
-  const img = document.createElement('img');
-  img.src = basePath + file;
-  img.alt = "Kép " + (i + 1);
-  img.addEventListener('click', () => openLightbox(i));
-  grid.appendChild(img);
+const container = document.getElementById('galleries-container');
+
+galleries.forEach((gallery, gIndex) => {
+  const section = document.createElement('div');
+  section.className = 'gallery-section';
+
+  const heading = document.createElement('h2');
+  heading.textContent = gallery.title;
+  section.appendChild(heading);
+
+  const grid = document.createElement('div');
+  grid.className = 'gallery-grid';
+
+  gallery.images.forEach((file, iIndex) => {
+    const img = document.createElement('img');
+    img.src = thumbsPath + gallery.folder + "/" + file;
+    img.alt = gallery.title + " – kép " + (iIndex + 1);
+    img.loading = "lazy";
+    img.addEventListener('click', () => openLightbox(gIndex, iIndex));
+    grid.appendChild(img);
+  });
+
+  section.appendChild(grid);
+  container.appendChild(section);
 });
 
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
-function openLightbox(index) {
-  currentIndex = index;
+function openLightbox(gIndex, iIndex) {
+  currentGallery = gIndex;
+  currentIndex = iIndex;
   updateLightboxImage();
   lightbox.style.display = 'flex';
 }
@@ -123,16 +160,19 @@ function closeLightbox() {
 }
 
 function updateLightboxImage() {
-  lightboxImg.src = basePath + images[currentIndex];
+  const gallery = galleries[currentGallery];
+  lightboxImg.src = fullPath + gallery.folder + "/" + gallery.images[currentIndex];
 }
 
 function showNext() {
-  currentIndex = (currentIndex + 1) % images.length;
+  const gallery = galleries[currentGallery];
+  currentIndex = (currentIndex + 1) % gallery.images.length;
   updateLightboxImage();
 }
 
 function showPrev() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  const gallery = galleries[currentGallery];
+  currentIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
   updateLightboxImage();
 }
 
@@ -140,12 +180,10 @@ document.getElementById('lightbox-close').addEventListener('click', closeLightbo
 document.getElementById('lightbox-next').addEventListener('click', showNext);
 document.getElementById('lightbox-prev').addEventListener('click', showPrev);
 
-// Kattintás a sötét háttérre is zárjon be, de a kép/gombok kattintása ne
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) closeLightbox();
 });
 
-// Billentyűzet: Escape zár, nyilak lapoznak
 document.addEventListener('keydown', (e) => {
   if (lightbox.style.display !== 'flex') return;
   if (e.key === 'Escape') closeLightbox();
