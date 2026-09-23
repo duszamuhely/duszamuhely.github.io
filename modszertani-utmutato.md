@@ -1,3 +1,4 @@
+# Módszertani útmutató
 
 Jelen dokumentum célja a Dusza Árpád Programozóműhely elnevezésű, középiskolásoknak szóló informatikai tehetséggondozó program bemutatása. A leírás tartalmazza a program célját, felépítését és a résztvevőkkel szemben támasztott elvárásokat, definiált feladatokat. 
 
