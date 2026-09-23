@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.url == "/" %}{{ site.title }}{% else %}{{ page.title }} – {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Ugrás a tartalomra</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}">Dusza Műhely</a>
+    <nav class="site-nav" aria-label="Fő menü">
+      {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{ content }}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>A Dusza Árpád Programozóműhelyt az <a href="https://isze.hu/">Informatika-Számítástechnika Tanárok Egyesülete</a> szervezi, az <a href="https://www.inf.elte.hu/">ELTE Informatikai Kar</a> társszervezésében.</p>
+    <p class="copy">© {{ site.time | date: "%Y" }} ISZE</p>
+  </div>
+</footer>
+</body>
+</html>
