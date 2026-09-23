@@ -119,12 +119,12 @@ Budapest, 2026\. szeptember 23\.
 
 #### **1\. workshop**
 
-- [ ] Az 1\. workshopra vállalt funkciók részben vagy teljes egészében működnek, amit élőben be is mutat a csapat.  
-- [ ] A szoftver még el nem készült részeihez tervek tartoznak (például képernyőtervek, architektúraterv).  
-- [ ] A prezentáció első változata minden fejezetet tartalmaz. A még meg nem valósult részek tervként szerepelnek.  
-- [ ] A prezentációban a csapat aktualizálta a mérföldkő-tervet (2. workshop, záró esemény), és az reális.  
-- [ ] A prezentálásban mindenki érdemben részt vesz.  
-- [ ] A prezentáció begyakorolt.
+[ ] Az 1\. workshopra vállalt funkciók részben vagy teljes egészében működnek, amit élőben be is mutat a csapat.  
+[ ] A szoftver még el nem készült részeihez tervek tartoznak (például képernyőtervek, architektúraterv).  
+[ ] A prezentáció első változata minden fejezetet tartalmaz. A még meg nem valósult részek tervként szerepelnek.  
+[ ] A prezentációban a csapat aktualizálta a mérföldkő-tervet (2. workshop, záró esemény), és az reális.  
+[ ] A prezentálásban mindenki érdemben részt vesz.  
+[ ] A prezentáció begyakorolt.
 
 #### **2\. workshop**
 
