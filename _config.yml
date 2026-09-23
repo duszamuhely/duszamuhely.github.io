@@ -1,0 +1,11 @@
+title: Dusza Műhely
+description: Dusza Műhely – kezdőlap
+theme: minima
+
+# Menü a fejlécben (aloldalak, ha lesznek)
+# header_pages:
+#   - about.md
+
+# Minima beállítások
+minima:
+  skin: auto
