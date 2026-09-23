@@ -1,0 +1,93 @@
+---
+layout: default
+---
+<header class="doc-hero">
+  <div class="wrap doc-hero-inner">
+    <div>
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="doc-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+    <svg class="doc-deco" viewBox="0 0 300 190" aria-hidden="true" focusable="false">
+      <rect x="120" y="22" width="120" height="26" rx="13" fill="#34B26A"/>
+      <rect x="170" y="150" width="110" height="24" rx="12" fill="#347462"/>
+      <circle cx="40" cy="40" r="11" fill="none" stroke="currentColor" stroke-width="3"/>
+      <circle cx="262" cy="96" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
+      <circle cx="96" cy="160" r="7" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M36 104 l-18 16 l18 16 M64 96 l-12 48 M80 104 l18 16 l-18 16" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M186 70 c-14 0 -14 8 -14 16 s0 12 -10 14 c10 2 10 6 10 14 s0 16 14 16 M214 70 c14 0 14 8 14 16 s0 12 10 14 c-10 2 -10 6 -10 14 s0 16 -14 16" fill="none" stroke="#EF8451" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <nav class="toc" aria-label="Fejezetek">
+    <details class="toc-box" open>
+      <summary>Fejezetek</summary>
+      <ol id="toc-list"></ol>
+    </details>
+  </nav>
+  <article class="doc-content" id="doc-content">
+    {{ content }}
+  </article>
+</div>
+
+<script>
+(function () {
+  var content = document.getElementById('doc-content');
+  var list = document.getElementById('toc-list');
+  if (!content || !list) return;
+
+  var headings = content.querySelectorAll('h2, h3');
+  var used = {};
+  function slug(t) {
+    var s = t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'fejezet';
+    var base = s, i = 2;
+    while (used[s]) { s = base + '-' + i++; }
+    used[s] = true;
+    return s;
+  }
+
+  var currentSub = null;
+  var links = [];
+  headings.forEach(function (h) {
+    h.id = slug(h.textContent);
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    links.push({ h: h, a: a });
+    if (h.tagName === 'H2') {
+      list.appendChild(li);
+      currentSub = document.createElement('ol');
+      li.appendChild(currentSub);
+    } else if (currentSub) {
+      currentSub.appendChild(li);
+    } else {
+      list.appendChild(li);
+    }
+  });
+  list.querySelectorAll('ol').forEach(function (o) { if (!o.children.length) o.remove(); });
+
+  var box = document.querySelector('.toc-box');
+  var mobile = window.matchMedia('(max-width: 900px)');
+  function syncOpen() { if (mobile.matches) box.removeAttribute('open'); else box.setAttribute('open', ''); }
+  syncOpen();
+  mobile.addEventListener('change', syncOpen);
+  list.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A' && mobile.matches) box.removeAttribute('open');
+  });
+
+  // aktuális fejezet kiemelése görgetéskor
+  function mark() {
+    var y = window.scrollY + window.innerHeight * 0.25;
+    var active = links[0];
+    links.forEach(function (l) { if (l.h.offsetTop <= y) active = l; });
+    links.forEach(function (l) { l.a.removeAttribute('aria-current'); });
+    if (active) active.a.setAttribute('aria-current', 'true');
+  }
+  window.addEventListener('scroll', mark, { passive: true });
+  mark();
+})();
+</script>
