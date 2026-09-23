@@ -1,3 +1,6 @@
+---
+---
+
 /* ---------- Tokenek (a logó színeiből) ---------- */
 :root {
   --ink: #24443F;        /* a figura körvonala */
@@ -372,3 +375,18 @@ main { padding-bottom: 0; }
 .site-footer p { max-width: 60ch; }
 .site-footer a { color: #fff; }
 .site-footer .copy { margin: 0; opacity: 0.75; }
+
+/* ---------- Checklisták (Markdown: - [ ] ...) ---------- */
+.task-list-item {
+  list-style: none;
+}
+ul:has(> .task-list-item) {
+  padding-left: 0.25rem;
+}
+.task-list-item-checkbox {
+  width: 1.05em;
+  height: 1.05em;
+  margin: 0 0.6em 0 0;
+  vertical-align: -0.12em;
+  accent-color: var(--green-deep);
+}
