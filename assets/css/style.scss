@@ -1031,3 +1031,29 @@ ul:has(> .task-list-item) {
   .nav-group .nav-menu { left: 0; right: auto; max-width: calc(100vw - 2rem); }
   .site-nav .nav-menu a { white-space: normal; }
 }
+@media (max-width: 640px) {
+  .site-nav { position: static; width: 100%; gap: 1.25rem; flex-wrap: nowrap; }
+  .nav-group { position: static; }
+  .nav-group .nav-menu {
+    left: var(--gutter);
+    right: var(--gutter);
+    top: calc(100% - 0.25rem);
+    max-width: none;
+    min-width: 0;
+  }
+  .nav-toggle { gap: 0.35rem; white-space: nowrap; }
+  /* mobilon a gomb a logó mellé kerül, a menücsoportok alatta vannak */
+  .header-inner { position: relative; }
+  .site-nav .nav-cta {
+    position: absolute;
+    top: 0.65rem;
+    right: var(--gutter);
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 370px) {
+  .wordmark { font-size: 1.05rem; gap: 0.45rem; }
+  .wordmark::before { width: 1.3rem; }
+  .site-nav .nav-cta { font-size: 0.9rem; padding: 0.35rem 0.8rem; }
+}

@@ -19,7 +19,9 @@ nav:
         url: /otletek/
       - title: Mentorok
         url: /mentorok/
-      - title: Korábbi csapatok
+  - title: Korábbi évek
+    items:
+      - title: Csapatok
         url: /csapatok/
       - title: Beszámolók
         url: /beszamolok/
