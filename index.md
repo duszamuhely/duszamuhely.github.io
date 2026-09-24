@@ -3,7 +3,7 @@ layout: default
 title: Kezdőlap
 ---
 
-<section class="hero wrap">
+<section class="hero wrap" id="jelentkezes">
   <div class="hero-art">
     <img src="{{ '/assets/img/hero-dusza.png' | relative_url }}" alt="Dusza Árpád Programozóműhely">
   </div>
@@ -14,9 +14,9 @@ title: Kezdőlap
     Nincs saját ötleted? <a href="{{ '/otletek/' | relative_url }}">Inspirálódj a projektötlet-listánkból.</a></p>
     <div class="hero-actions">
 {% if site.jelentkezes_url != "" %}
-      <a class="btn" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezem</a>
+      <a class="apply-btn apply-btn--lg" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezés</a>
 {% else %}
-      <span class="btn is-disabled" aria-disabled="true">Az űrlap hamarosan nyílik</span>
+      <a class="apply-btn apply-btn--lg" href="#jelentkezes" data-apply>Jelentkezés</a>
 {% endif %}
       <p>Határidő: <strong>2026. december 18.</strong></p>
     </div>

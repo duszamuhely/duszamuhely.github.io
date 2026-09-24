@@ -1008,25 +1008,33 @@ ul:has(> .task-list-item) {
 .milestones li.is-now strong { color: var(--orange); }
 .milestones span { color: var(--ink-soft); }
 
-/* Jelentkezés gomb a menüsorban */
-.site-nav .nav-cta {
+/* Jelentkezés gomb (menüsor, főoldal, felugró ablak) */
+:root { --apply: #CC5A26; } /* mélyebb narancs: ezen a fehér felirat jól olvasható */
+.apply-btn,
+.site-nav .apply-btn {
   display: inline-block;
-  background: var(--orange);
-  color: #24443F;
+  background: var(--apply);
+  color: #fff;
+  font-family: var(--display);
   font-weight: 600;
+  font-size: 1.05rem;
   text-decoration: none;
-  padding: 0.5rem 1.25rem;
-  border: 2px solid var(--orange);
+  padding: 0.5rem 1.3rem;
+  border: 2px solid var(--apply);
   border-radius: 99px;
   line-height: 1.2;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
-.site-nav .nav-cta:hover {
+.apply-btn:hover,
+.site-nav .apply-btn:hover {
   background: var(--green-deep);
   border-color: var(--green-deep);
   color: #fff;
+  text-decoration: none;
 }
-.site-nav .nav-cta:focus-visible { outline-offset: 3px; }
+.apply-btn:focus-visible { outline: 3px solid var(--apply); outline-offset: 3px; }
+.apply-btn--lg { font-size: 1.2rem; padding: 0.8rem 2.2rem; }
 @media (max-width: 640px) {
   .nav-group .nav-menu { left: 0; right: auto; max-width: calc(100vw - 2rem); }
   .site-nav .nav-menu a { white-space: normal; }
@@ -1057,3 +1065,47 @@ ul:has(> .task-list-item) {
   .wordmark::before { width: 1.3rem; }
   .site-nav .nav-cta { font-size: 0.9rem; padding: 0.35rem 0.8rem; }
 }
+
+/* ---------- Felugró ablak: az űrlap még nem nyílt meg ---------- */
+.apply-dialog {
+  width: min(26rem, calc(100vw - 2rem));
+  border: 0;
+  border-radius: 20px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(20, 36, 31, 0.35);
+}
+.apply-dialog::backdrop { background: rgba(20, 36, 31, 0.55); }
+.apply-dialog[open] { animation: apply-pop 0.18s ease-out; }
+@keyframes apply-pop { from { transform: scale(0.94); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .apply-dialog[open] { animation: none; } }
+.apply-dialog-art {
+  width: 9rem;
+  height: 9rem;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--peach);
+  margin: 0 auto 1rem;
+  display: block;
+}
+.apply-dialog h2 { font-size: 1.35rem; margin: 0 0 0.6rem; }
+.apply-dialog p { margin: 0 0 0.8rem; }
+.apply-dialog-tip { color: var(--ink-soft); font-size: 0.95rem; }
+.apply-dialog .apply-btn { margin-top: 0.6rem; }
+.apply-dialog-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.apply-dialog-close:hover { background: var(--mint); color: var(--ink); }

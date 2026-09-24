@@ -34,9 +34,9 @@
         {% endif %}
       {% endfor %}
       {% if site.jelentkezes_url != "" %}
-      <a class="nav-cta" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezés</a>
+      <a class="apply-btn nav-cta" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezés</a>
       {% else %}
-      <a class="nav-cta" href="{{ '/#jelentkezes' | relative_url }}">Jelentkezés</a>
+      <a class="apply-btn nav-cta" href="{{ '/#jelentkezes' | relative_url }}" data-apply>Jelentkezés</a>
       {% endif %}
     </nav>
   </div>
@@ -86,5 +86,29 @@
   });
 })();
 </script>
+{% if site.jelentkezes_url == "" %}
+<dialog class="apply-dialog" id="apply-dialog" aria-labelledby="apply-dialog-title">
+  <button type="button" class="apply-dialog-close" aria-label="Bezárás" data-close>&times;</button>
+  <img class="apply-dialog-art" src="{{ '/assets/img/hero-dusza.png' | relative_url }}" alt="">
+  <h2 id="apply-dialog-title">Az űrlap még fordítás alatt áll</h2>
+  <p>Nem, nem angolra fordítjuk: még épp compile-ol. A jelentkezési űrlap hamarosan itt lesz, úgyhogy nézz vissza egy kicsit később!</p>
+  <p class="apply-dialog-tip">Addig is érdemes átnézni a <a href="{{ '/modszertani-utmutato/' | relative_url }}">módszertani útmutatót</a> és a <a href="{{ '/otletek/' | relative_url }}">projektötleteket</a>.</p>
+  <button type="button" class="apply-btn" data-close>Rendben, visszanézek</button>
+</dialog>
+<script>
+(function () {
+  var dlg = document.getElementById('apply-dialog');
+  if (!dlg || typeof dlg.showModal !== 'function') return; // régi böngészőben marad a sima link
+  document.querySelectorAll('[data-apply]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); dlg.showModal(); });
+  });
+  dlg.querySelectorAll('[data-close]').forEach(function (b) {
+    b.addEventListener('click', function () { dlg.close(); });
+  });
+  // kattintás az ablakon kívülre (a sötét háttérre) is bezárja
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+{% endif %}
 </body>
 </html>
