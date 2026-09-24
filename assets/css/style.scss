@@ -588,3 +588,28 @@ ul:has(> .task-list-item) {
   .toc[data-collapse] #toc-list > li > ol { display: block; }
   .toc-count { background: var(--paper); }
 }
+
+/* időpont és helyszín a főoldali idővonalon */
+.timeline span { display: block; }
+.timeline .t-time {
+  margin-top: 0.35rem;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--green-deep);
+  background: var(--paper);
+  border-radius: 99px;
+  padding: 0.1rem 0.6rem;
+}
+@media (prefers-color-scheme: dark) {
+  .timeline .t-time { color: var(--green); }
+}
+.venue {
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  max-width: 48rem;
+}
+.venue p { margin: 0 0 0.4rem; }
+.venue-note { color: var(--ink-soft); font-size: 0.95rem; }
