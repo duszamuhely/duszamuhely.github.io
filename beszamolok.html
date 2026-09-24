@@ -1,0 +1,26 @@
+---
+layout: doc
+toc_collapse: true
+title: Beszámolók
+subtitle: Résztvevők, felkészítő tanárok és szervezők írásai a műhelyről
+permalink: /beszamolok/
+---
+{% assign kategoriak = "Diákok beszámolói|Felkészítő tanárok|Tapasztalatok összegzése|Hírek a műhelyről" | split: "|" %}
+{% for k in kategoriak %}
+{% assign irasok = site.beszamolok | where: "kategoria", k | sort: "rendezes" | reverse %}
+{% if irasok.size > 0 %}
+<section class="story-section">
+  <h2>{{ k }}</h2>
+  <div class="story-grid">
+  {% for b in irasok %}
+    <article class="story-card">
+      <h3><a href="{{ b.url | relative_url }}">{{ b.title }}</a></h3>
+      <p class="story-byline">{{ b.szerzo }}{% if b.szerep %} <span>{{ b.szerep }}</span>{% endif %}</p>
+      <p class="story-excerpt">{{ b.content | strip_html | truncatewords: 30, "…" }}</p>
+      <p class="story-foot"><span>{{ b.megjelent }}</span><span class="more" aria-hidden="true">Elolvasom</span></p>
+    </article>
+  {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endfor %}

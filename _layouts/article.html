@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<header class="doc-hero">
+  <div class="wrap doc-hero-inner">
+    <div>
+      <p class="article-kicker"><a href="{{ '/beszamolok/' | relative_url }}">Beszámolók</a> / {{ page.kategoria }}</p>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p class="article-byline"><strong>{{ page.szerzo }}</strong>{% if page.szerep %}, {{ page.szerep }}{% endif %}</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap article">
+  <article class="article-body">
+    {{ content }}
+  </article>
+
+  {% if page.forras %}
+  <p class="article-source">
+    Forrás:
+    {% if page.forras_url %}<a href="{{ page.forras_url }}" target="_blank" rel="noopener">{{ page.forras }}</a>{% else %}{{ page.forras }}{% endif %}{% if page.megjelent %}, {{ page.megjelent }}{% endif %}
+  </p>
+  {% endif %}
+
+  {% assign tobbi = site.beszamolok | where: "kategoria", page.kategoria | sort: "rendezes" | reverse %}
+  {% if tobbi.size > 1 %}
+  <nav class="article-more" aria-label="További írások">
+    <h2>További írások: {{ page.kategoria | downcase }}</h2>
+    <ul>
+      {% for b in tobbi %}{% unless b.url == page.url %}
+      <li><a href="{{ b.url | relative_url }}">{{ b.title }}</a> <span>{{ b.szerzo }}</span></li>
+      {% endunless %}{% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+  <p><a href="{{ '/beszamolok/' | relative_url }}">Vissza az összes beszámolóhoz</a></p>
+</div>

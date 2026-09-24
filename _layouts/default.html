@@ -18,7 +18,20 @@
     <a class="wordmark" href="{{ '/' | relative_url }}">Dusza Műhely</a>
     <nav class="site-nav" aria-label="Fő menü">
       {% for item in site.nav %}
-      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {% if item.items %}
+          {% assign group_active = false %}
+          {% for sub in item.items %}{% if page.url contains sub.url %}{% assign group_active = true %}{% endif %}{% endfor %}
+      <div class="nav-group{% if group_active %} is-active{% endif %}">
+        <button type="button" class="nav-toggle" aria-expanded="false">{{ item.title }}<span class="nav-caret" aria-hidden="true"></span></button>
+        <div class="nav-menu">
+          {% for sub in item.items %}
+          <a href="{{ sub.url | relative_url }}"{% if page.url contains sub.url %} aria-current="page"{% endif %}>{{ sub.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+        {% else %}
+      <a class="nav-link" href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {% endif %}
       {% endfor %}
     </nav>
   </div>
@@ -34,5 +47,39 @@
     <p class="copy">© {{ site.time | date: "%Y" }} ISZE</p>
   </div>
 </footer>
+
+<script>
+// lenyíló menük: kattintásra nyílnak, kívülre kattintásra vagy Escape-re záródnak
+(function () {
+  var groups = document.querySelectorAll('.nav-group');
+  function closeAll(except) {
+    groups.forEach(function (g) {
+      if (g === except) return;
+      g.classList.remove('is-open');
+      g.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+  groups.forEach(function (g) {
+    var btn = g.querySelector('.nav-toggle');
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !g.classList.contains('is-open');
+      closeAll(g);
+      g.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-group')) closeAll();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var open = document.querySelector('.nav-group.is-open .nav-toggle');
+      closeAll();
+      if (open) open.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>

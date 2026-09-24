@@ -4,13 +4,40 @@ description: Dusza Árpád Programozóműhely – középiskolás csapatok proje
 # Jelentkezési űrlap linkje. Amíg üres, a gomb "hamarosan" feliratú és nem kattintható.
 jelentkezes_url: ""
 
-# Menü a fejlécben
+# Menü a fejlécben. Egy pont lehet sima link (title + url),
+# vagy lenyíló csoport (title + items).
 nav:
-  - title: Módszertani útmutató
-    url: /modszertani-utmutato/
-  - title: Projektötletek
-    url: /otletek/
-  - title: Korábbi csapatok
-    url: /csapatok/
-  - title: Galéria
-    url: /galeria/
+  # Ha elkészül a Rólunk és a Mentorok oldal, vedd ki a # jeleket ebből a blokkból:
+  # - title: A műhelyről
+  #   items:
+  #     - title: Rólunk
+  #       url: /rolunk/
+  #     - title: Mentorok
+  #       url: /mentorok/
+  - title: Jelentkezőknek
+    items:
+      - title: Módszertani útmutató
+        url: /modszertani-utmutato/
+      - title: Projektötletek
+        url: /otletek/
+  - title: Korábbi évek
+    items:
+      - title: Csapatok
+        url: /csapatok/
+      - title: Beszámolók
+        url: /beszamolok/
+      - title: Galéria
+        url: /galeria/
+
+# Beszámolók: minden írás egy fájl a _beszamolok mappában
+collections:
+  beszamolok:
+    output: true
+    permalink: /beszamolok/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: beszamolok
+    values:
+      layout: article

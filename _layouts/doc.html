@@ -96,7 +96,7 @@ layout: default
   function mark() {
     var y = window.scrollY + window.innerHeight * 0.25;
     var active = links[0];
-    links.forEach(function (l) { if (l.h.offsetTop <= y) active = l; });
+    links.forEach(function (l) { if (l.h.getBoundingClientRect().top + window.scrollY <= y) active = l; });
     links.forEach(function (l) { l.a.removeAttribute('aria-current'); });
     if (active) active.a.setAttribute('aria-current', 'true');
     if (collapse) {

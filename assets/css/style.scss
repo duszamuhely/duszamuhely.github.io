@@ -232,7 +232,7 @@ main { padding-bottom: 0; }
   margin: 2.25rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   position: relative;
 }
 
@@ -244,12 +244,12 @@ main { padding-bottom: 0; }
   right: 0;
   height: 3px;
   border-radius: 3px;
-  background: linear-gradient(to right, var(--orange) 0 25%, var(--green) 25% 75%, var(--green-deep) 75%);
+  background: linear-gradient(to right, var(--orange) 0 20%, var(--green) 20% 80%, var(--green-deep) 80%);
 }
 
 .timeline li {
   position: relative;
-  padding: 2.4rem 1.5rem 0 0;
+  padding: 2.4rem 1rem 0 0;
 }
 
 .timeline li::before {
@@ -268,7 +268,7 @@ main { padding-bottom: 0; }
   display: block;
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.2;
   margin-bottom: 0.3rem;
 }
@@ -291,12 +291,12 @@ main { padding-bottom: 0; }
   .timeline .is-deadline time { color: #FFA57A; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
   .timeline { grid-template-columns: 1fr; }
   .timeline::before {
     top: 0.7rem; bottom: 0.7rem; left: 0.58rem; right: auto;
     width: 3px; height: auto;
-    background: linear-gradient(to bottom, var(--orange) 0 25%, var(--green) 25% 75%, var(--green-deep) 75%);
+    background: linear-gradient(to bottom, var(--orange) 0 20%, var(--green) 20% 80%, var(--green-deep) 80%);
   }
   .timeline li { padding: 0 0 1.75rem 2.6rem; }
   .timeline li:last-child { padding-bottom: 0; }
@@ -701,3 +701,163 @@ ul:has(> .task-list-item) {
   border-radius: 99px;
   padding: 0.15rem 0.6rem;
 }
+
+.timeline time small {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 0.1rem;
+}
+.timeline .is-deadline time small { color: inherit; opacity: 0.8; }
+@media (max-width: 1000px) {
+  .timeline time small { display: inline; font-size: inherit; color: inherit; margin: 0; }
+}
+
+/* ---------- Lenyíló menü ---------- */
+.site-nav { align-items: center; }
+.nav-group { position: relative; }
+.nav-toggle {
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.nav-toggle:hover { color: var(--ink); }
+.nav-group.is-active .nav-toggle {
+  color: var(--ink);
+  border-bottom-color: var(--orange);
+}
+.nav-caret {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.nav-group.is-open .nav-caret { transform: translateY(0.1rem) rotate(-135deg); }
+
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  z-index: 50;
+  min-width: 14rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(36, 68, 63, 0.14);
+  padding: 0.4rem;
+}
+.nav-group:last-child .nav-menu { left: auto; right: 0; }
+.nav-group.is-open .nav-menu { display: block; }
+.site-nav .nav-menu a {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  border: 0;
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.site-nav .nav-menu a:hover { background: var(--mint); }
+.site-nav .nav-menu a[aria-current="page"] {
+  background: var(--orange-tint);
+  font-weight: 600;
+}
+
+/* ---------- Beszámolók ---------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.doc-content > .story-section { max-width: none; }
+.story-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.story-card:hover {
+  border-color: var(--green);
+  box-shadow: 0 6px 20px rgba(36, 68, 63, 0.1);
+}
+.doc-content .story-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  color: var(--ink);
+  scroll-margin-top: 1.5rem;
+}
+.story-card h3 a { color: inherit; text-decoration: none; }
+.story-card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
+.story-card h3 a:focus-visible { outline: none; }
+.story-card:has(h3 a:focus-visible) { outline: 3px solid var(--orange); outline-offset: 2px; }
+.story-byline { font-weight: 600; margin: 0 0 0.6rem; font-size: 0.95rem; }
+.story-byline span { font-weight: 400; color: var(--ink-soft); }
+.story-excerpt { color: var(--ink-soft); margin: 0 0 0.9rem; font-size: 0.97rem; }
+.story-foot {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.story-foot .more { color: var(--link); font-weight: 600; }
+
+/* egy beszámoló oldala */
+.article-kicker { margin: 0 0 0.6rem; font-size: 0.95rem; color: var(--ink-soft); }
+.article-kicker a { color: var(--ink-soft); }
+.article-byline { margin: 0; font-size: 1.1rem; color: var(--ink-soft); }
+.article-byline strong { color: var(--ink); }
+.article {
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+  max-width: 76rem;
+}
+.article-body { max-width: 44rem; font-size: 1.1rem; }
+.article-body h2 {
+  font-size: 1.35rem;
+  margin-top: 2.25rem;
+  color: var(--green-deep);
+}
+@media (prefers-color-scheme: dark) {
+  .article-body h2 { color: var(--green); }
+}
+.article-body blockquote {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.25rem;
+  border-left: 5px solid var(--orange);
+  background: var(--orange-tint);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+}
+.article-body blockquote p:last-child { margin-bottom: 0; }
+.article-source {
+  max-width: 44rem;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.article-more { max-width: 44rem; margin-top: 2.5rem; }
+.article-more h2 { font-size: 1.2rem; }
+.article-more ul { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.article-more li { margin-bottom: 0.5rem; }
+.article-more li span { color: var(--ink-soft); }
