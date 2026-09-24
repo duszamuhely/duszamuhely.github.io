@@ -8,5 +8,7 @@ jelentkezes_url: ""
 nav:
   - title: Módszertani útmutató
     url: /modszertani-utmutato/
+  - title: Projektötletek
+    url: /otletek/
   - title: Galéria
     url: /galeria/

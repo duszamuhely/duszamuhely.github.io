@@ -34,7 +34,7 @@ A jelentkezéshez a csapat kifejti a saját projektötletét és megválaszolja 
 * Csapatlétszám: 3–5 fő
 * Felkészítő tanár megjelölése kötelező.
 * Az ötlet bemutatásának formája: **írásos leírás** (kb. egy A4-es oldal, de lehet több is), **videó** vagy **prezentáció**.
-* Ötlet hiányában a mentorok által közzétett ötletlistából is lehet választani, amit tetszőlegesen továbbfejleszthet a csapat.
+* Ötlet hiányában a mentorok által közzétett [ötletlistából](/otletek/) is lehet választani, amit tetszőlegesen továbbfejleszthet a csapat.
 
 A jelentkezés része a **mérföldkő-terv**, amely megadja, melyik funkció várhatóan melyik alkalomra fog elkészülni:
 

@@ -9,7 +9,9 @@ title: Kezdőlap
   </div>
   <div class="hero-text">
     <h1>Várjuk a jelentkezéseket a 2026–2027-es Dusza Műhelybe</h1>
-    <p class="lead">3–5 fős középiskolás csapatok valósíthatják meg saját vagy választott projektötletüket, iparban dolgozó mentorok támogatásával. A részvétel ingyenes.</p>
+    <p class="lead">3–5 fős középiskolás csapatok valósíthatják meg saját projektötletüket, iparban dolgozó mentorok támogatásával. 
+    A részvétel ingyenes.<br>
+    Nincs saját ötleted? <a href="{{ '/otletek/' | relative_url }}">Inspirálódj a projektötlet-listánkból.</a></p>
     <div class="hero-actions">
 {% if site.jelentkezes_url != "" %}
       <a class="btn" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezem</a>
