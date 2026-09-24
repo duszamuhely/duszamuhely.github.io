@@ -5,99 +5,122 @@ permalink: /galeria/
 ---
 
 <style>
-.gallery-section {
-  margin-bottom: 3rem;
+.gallery-section { margin: 0 0 3.5rem; }
+.gallery-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
 }
-.gallery-section h2 {
-  margin-bottom: 0.5rem;
-}
+.gallery-head h2 { margin: 0; font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+.gallery-count { color: var(--ink-soft); font-size: 0.95rem; }
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  margin-top: 1rem;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  gap: 10px;
+}
+.gallery-grid button {
+  padding: 0;
+  border: 0;
+  background: var(--mint);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 4 / 3;
 }
 .gallery-grid img {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 6px;
+  display: block;
+  transition: transform 0.2s ease;
+}
+.gallery-grid button:hover img { transform: scale(1.04); }
+.gallery-grid button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+.gallery-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+.gallery-pager button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--green-deep);
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.4rem;
+  line-height: 1;
   cursor: pointer;
-  transition: transform 0.15s ease;
 }
-.gallery-grid img:hover {
-  transform: scale(1.03);
-}
+.gallery-pager button:hover:not(:disabled) { background: var(--green-deep); color: #fff; }
+.gallery-pager button:disabled { opacity: 0.3; cursor: default; }
+.gallery-pager .page-info { min-width: 4.5rem; text-align: center; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
 
 /* Lightbox */
 #lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(10, 20, 17, 0.94);
   align-items: center;
   justify-content: center;
   z-index: 999;
+  touch-action: pan-y;
 }
+#lightbox.is-open { display: flex; }
 #lightbox img {
-  max-width: 85%;
-  max-height: 85%;
+  max-width: 88%;
+  max-height: 84%;
   border-radius: 4px;
+  user-select: none;
 }
-
 #lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
-  font-size: 2.2rem;
-  line-height: 1;
-  cursor: pointer;
-  user-select: none;
-  background: none;
-  border: none;
+  position: absolute; top: 16px; right: 20px;
+  color: #fff; font-size: 2.4rem; line-height: 1;
+  background: none; border: none; cursor: pointer;
 }
-#lightbox-close:hover {
-  color: #ccc;
-}
-
 .lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 2.5rem;
+  position: absolute; top: 50%; transform: translateY(-50%);
+  color: #fff; font-size: 2.5rem; line-height: 1;
+  background: rgba(255,255,255,0.08); border: none;
+  width: 3.25rem; height: 3.25rem; border-radius: 50%;
   cursor: pointer;
-  user-select: none;
-  background: rgba(0,0,0,0.3);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
 }
-.lightbox-nav:hover {
-  background: rgba(0,0,0,0.6);
+.lightbox-nav:hover, #lightbox-close:hover { background: rgba(255,255,255,0.18); }
+#lightbox-close { border-radius: 50%; width: 3rem; height: 3rem; }
+#lightbox-prev { left: 16px; }
+#lightbox-next { right: 16px; }
+#lightbox-caption {
+  position: absolute; bottom: 16px; left: 0; right: 0;
+  text-align: center; color: #cfe0d8; font-size: 0.95rem;
+  padding: 0 1rem;
 }
-#lightbox-prev { left: 20px; }
-#lightbox-next { right: 20px; }
-
 @media (max-width: 600px) {
-  .lightbox-nav { font-size: 1.8rem; padding: 0.4rem 0.7rem; }
-  #lightbox-close { font-size: 1.8rem; top: 12px; right: 16px; }
+  .lightbox-nav { width: 2.6rem; height: 2.6rem; font-size: 2rem; }
+  #lightbox img { max-width: 100%; }
 }
 </style>
 
 <div id="galleries-container"></div>
 
-<div id="lightbox">
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Kép nagyítva">
   <button id="lightbox-close" aria-label="Bezárás">&times;</button>
-  <button class="lightbox-nav" id="lightbox-prev" aria-label="Előző">&#8249;</button>
+  <button class="lightbox-nav" id="lightbox-prev" aria-label="Előző kép">&#8249;</button>
   <img id="lightbox-img" src="" alt="">
-  <button class="lightbox-nav" id="lightbox-next" aria-label="Következő">&#8250;</button>
+  <button class="lightbox-nav" id="lightbox-next" aria-label="Következő kép">&#8250;</button>
+  <div id="lightbox-caption"></div>
 </div>
 
 <script>
-// Minden galériához: cím, mappa neve, és a fájlnevek (ugyanaz a fájlnév kell
-// mindkét mappában – csak a mappa különbözteti meg a kicsi és nagy verziót).
+// A galériák adatai: cím, mappa, fájlnevek.
+// Bélyegképek: assets/gallery/thumbs/<folder>/<fájl>, eredetik: assets/gallery/full/<folder>/<fájl>
 const galleries = [
   {
     title: "Dusza Műhely Zárórendezvény (2026. február 14.)",
@@ -512,83 +535,150 @@ const galleries = [
   }
 ];
 
-// A kicsinyített képek ide kerülnek: assets/gallery/thumbs/<folder>/<fájlnév>
-// Az eredeti (nagy) képek ide kerülnek:      assets/gallery/full/<folder>/<fájlnév>
-const thumbsPath = "/assets/gallery/thumbs/";
-const fullPath = "/assets/gallery/full/";
+const thumbsPath = "{{ '/assets/gallery/thumbs/' | relative_url }}";
+const fullPath = "{{ '/assets/gallery/full/' | relative_url }}";
+const ROWS = 2; // ennyi sor bélyegkép látszik egy oldalon
 
-let currentGallery = 0;
-let currentIndex = 0;
+function src(base, g, file) { return base + g.folder + "/" + encodeURIComponent(file); }
+
+// Oszlopszám a rendelkezésre álló szélesség alapján
+function colsFor(width) {
+  if (width < 420) return 2;
+  if (width < 700) return 3;
+  if (width < 1000) return 4;
+  return 5;
+}
 
 const container = document.getElementById('galleries-container');
+const views = [];
 
-galleries.forEach((gallery, gIndex) => {
-  const section = document.createElement('div');
+galleries.forEach((g, gi) => {
+  const section = document.createElement('section');
   section.className = 'gallery-section';
-
-  const heading = document.createElement('h2');
-  heading.textContent = gallery.title;
-  section.appendChild(heading);
-
-  const grid = document.createElement('div');
-  grid.className = 'gallery-grid';
-
-  gallery.images.forEach((file, iIndex) => {
-    const img = document.createElement('img');
-    img.src = thumbsPath + gallery.folder + "/" + encodeURIComponent(file);
-    img.alt = gallery.title + " – kép " + (iIndex + 1);
-    img.loading = "lazy";
-    img.addEventListener('click', () => openLightbox(gIndex, iIndex));
-    grid.appendChild(img);
-  });
-
-  section.appendChild(grid);
+  section.innerHTML =
+    '<div class="gallery-head"><h2></h2><span class="gallery-count"></span></div>' +
+    '<div class="gallery-grid"></div>' +
+    '<div class="gallery-pager">' +
+      '<button type="button" class="prev" aria-label="Előző oldal">&#8249;</button>' +
+      '<span class="page-info" aria-live="polite"></span>' +
+      '<button type="button" class="next" aria-label="Következő oldal">&#8250;</button>' +
+    '</div>';
+  section.querySelector('h2').textContent = g.title;
+  section.querySelector('.gallery-count').textContent = g.images.length + ' kép';
   container.appendChild(section);
+
+  const view = {
+    g, gi, page: 0, perPage: 10,
+    grid: section.querySelector('.gallery-grid'),
+    pager: section.querySelector('.gallery-pager'),
+    info: section.querySelector('.page-info'),
+    prev: section.querySelector('.prev'),
+    next: section.querySelector('.next')
+  };
+  view.prev.addEventListener('click', () => { view.page--; render(view); });
+  view.next.addEventListener('click', () => { view.page++; render(view); });
+  views.push(view);
 });
 
+function pages(v) { return Math.max(1, Math.ceil(v.g.images.length / v.perPage)); }
+
+function render(v) {
+  const cols = colsFor(v.grid.clientWidth || container.clientWidth);
+  v.perPage = cols * ROWS;
+  v.page = Math.min(Math.max(v.page, 0), pages(v) - 1);
+  v.grid.style.setProperty('--cols', cols);
+  v.grid.innerHTML = '';
+  const start = v.page * v.perPage;
+  v.g.images.slice(start, start + v.perPage).forEach((file, k) => {
+    const i = start + k;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', v.g.title + ', ' + (i + 1) + '. kép megnyitása');
+    const img = document.createElement('img');
+    img.src = src(thumbsPath, v.g, file);
+    img.alt = '';
+    img.loading = 'lazy';
+    b.appendChild(img);
+    b.addEventListener('click', () => openLightbox(v, i));
+    v.grid.appendChild(b);
+  });
+  const n = pages(v);
+  v.pager.hidden = n < 2;
+  v.info.textContent = (v.page + 1) + ' / ' + n;
+  v.prev.disabled = v.page === 0;
+  v.next.disabled = v.page >= n - 1;
+}
+
+views.forEach(render);
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => views.forEach(v => {
+    // az oldal első képe maradjon látható átméretezés után is
+    const first = v.page * v.perPage;
+    render(v);
+    v.page = Math.floor(first / v.perPage);
+    render(v);
+  }), 150);
+});
+
+// ---------- Lightbox ----------
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
+const caption = document.getElementById('lightbox-caption');
+let cur = null, idx = 0, lastFocus = null;
 
-function openLightbox(gIndex, iIndex) {
-  currentGallery = gIndex;
-  currentIndex = iIndex;
-  updateLightboxImage();
-  lightbox.style.display = 'flex';
+function openLightbox(v, i) {
+  cur = v; idx = i; lastFocus = document.activeElement;
+  show();
+  lightbox.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('lightbox-close').focus();
 }
-
 function closeLightbox() {
-  lightbox.style.display = 'none';
+  lightbox.classList.remove('is-open');
+  document.body.style.overflow = '';
+  // a rács arra az oldalra ugrik, ahol az utoljára nézett kép van
+  if (cur) {
+    const p = Math.floor(idx / cur.perPage);
+    if (p !== cur.page) { cur.page = p; render(cur); }
+  }
+  if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
 }
-
-function updateLightboxImage() {
-  const gallery = galleries[currentGallery];
-  lightboxImg.src = fullPath + gallery.folder + "/" + encodeURIComponent(gallery.images[currentIndex]);
+function show() {
+  const g = cur.g;
+  lightboxImg.src = src(fullPath, g, g.images[idx]);
+  lightboxImg.alt = g.title + ', ' + (idx + 1) + '. kép';
+  caption.textContent = g.title + ' · ' + (idx + 1) + ' / ' + g.images.length;
+  // a következő kép előtöltése
+  const pre = new Image();
+  pre.src = src(fullPath, g, g.images[(idx + 1) % g.images.length]);
 }
-
-function showNext() {
-  const gallery = galleries[currentGallery];
-  currentIndex = (currentIndex + 1) % gallery.images.length;
-  updateLightboxImage();
-}
-
-function showPrev() {
-  const gallery = galleries[currentGallery];
-  currentIndex = (currentIndex - 1 + gallery.images.length) % gallery.images.length;
-  updateLightboxImage();
+function step(d) {
+  const n = cur.g.images.length;
+  idx = (idx + d + n) % n;
+  show();
 }
 
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-document.getElementById('lightbox-next').addEventListener('click', showNext);
-document.getElementById('lightbox-prev').addEventListener('click', showPrev);
+document.getElementById('lightbox-next').addEventListener('click', () => step(1));
+document.getElementById('lightbox-prev').addEventListener('click', () => step(-1));
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('is-open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') step(1);
+  if (e.key === 'ArrowLeft') step(-1);
 });
 
-document.addEventListener('keydown', (e) => {
-  if (lightbox.style.display !== 'flex') return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') showNext();
-  if (e.key === 'ArrowLeft') showPrev();
+// Lapozás húzással (telefonon)
+let touchX = null;
+lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+lightbox.addEventListener('touchend', e => {
+  if (touchX === null) return;
+  const dx = e.changedTouches[0].clientX - touchX;
+  if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+  touchX = null;
 });
 </script>
