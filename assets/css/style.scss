@@ -12,6 +12,7 @@
   --green: #34B26A;      /* világos csík */
   --green-deep: #347462; /* sötét csík */
   --mint: #E8F6EE;
+  --hero-disc: #D6EEE0; /* a figura mögötti korong: elválik az arc színétől */
   --line: #D6E3DC;
   --link: #2B6B58;
 
@@ -172,7 +173,7 @@ main { padding-bottom: 0; }
   position: absolute;
   inset: 8% 4% 0 8%;
   border-radius: 50%;
-  background: var(--peach);
+  background: var(--hero-disc);
 }
 .hero-art img {
   position: relative;
@@ -1086,7 +1087,7 @@ ul:has(> .task-list-item) {
   height: 9rem;
   object-fit: contain;
   border-radius: 50%;
-  background: var(--peach);
+  background: var(--hero-disc);
   margin: 0 auto 1rem;
   display: block;
 }
