@@ -613,3 +613,91 @@ ul:has(> .task-list-item) {
 }
 .venue p { margin: 0 0 0.4rem; }
 .venue-note { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---------- Korábbi csapatok ---------- */
+.team-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.team-stats div {
+  background: var(--mint);
+  border-radius: 14px;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.team-stats strong {
+  font-family: var(--display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--green-deep);
+}
+@media (prefers-color-scheme: dark) {
+  .team-stats strong { color: var(--green); }
+}
+.team-stats span { color: var(--ink-soft); }
+
+.doc-content > .season-block { max-width: none; }
+.season-meta { color: var(--ink-soft); margin-top: -0.3rem; }
+.season-gallery { margin-left: 1rem; font-weight: 600; white-space: nowrap; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.team-card {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--green);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+}
+.doc-content .team-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  color: var(--ink);
+  scroll-margin-top: 1.5rem;
+}
+.team-project { font-weight: 600; margin: 0 0 0.3rem; }
+.team-desc { margin: 0 0 0.75rem; }
+.team-meta {
+  margin: 0 0 0.9rem;
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+}
+.team-meta dt {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--green-deep);
+  margin-top: 0.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  .team-meta dt { color: var(--green); }
+}
+.team-meta dd { margin: 0.1rem 0 0; line-height: 1.45; }
+.team-tech {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.doc-content .team-tech li {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--orange-tint);
+  color: var(--ink);
+  border-radius: 99px;
+  padding: 0.15rem 0.6rem;
+}

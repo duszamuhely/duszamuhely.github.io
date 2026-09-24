@@ -1,0 +1,43 @@
+---
+layout: doc
+toc_collapse: true
+title: Korábbi csapatok
+subtitle: A műhelyt sikeresen befejező csapatok és projektjeik
+permalink: /csapatok/
+---
+{% assign evadok = site.data.csapatok %}
+{% assign osszes = 0 %}
+{% for e in evadok %}{% assign osszes = osszes | plus: e.csapatok.size %}{% endfor %}
+
+<div class="team-stats">
+  <div><strong>{{ osszes }}</strong><span>csapat fejezte be a műhelyt</span></div>
+  <div><strong>{{ evadok.size }}</strong><span>évad {{ evadok.last.evad | split: "–" | first }} óta</span></div>
+</div>
+
+{% for e in evadok %}
+<section class="season-block">
+  <h2>{{ e.evad }}</h2>
+  <p class="season-meta">
+    {{ e.csapatok.size }} csapat{% if e.zaro %}, záróesemény: {{ e.zaro }}{% endif %}{% if e.galeria %}<a class="season-gallery" href="{{ '/galeria/' | relative_url }}">Képek a galériában</a>{% endif %}
+  </p>
+  <div class="team-grid">
+  {% for c in e.csapatok %}
+    <article class="team-card">
+      <h3>{% if c.nev %}{{ c.nev }}{% else %}{{ c.projekt }}{% endif %}</h3>
+      {% if c.nev and c.projekt %}<p class="team-project">{{ c.projekt }}</p>{% endif %}
+      {% if c.leiras %}<p class="team-desc">{{ c.leiras }}</p>{% endif %}
+      <dl class="team-meta">
+        {% if c.iskola %}<dt>Iskola</dt><dd>{{ c.iskola }}</dd>{% endif %}
+        {% if c.tanar %}<dt>Felkészítő tanár</dt><dd>{{ c.tanar }}</dd>{% endif %}
+        {% if c.tagok %}<dt>Csapattagok</dt><dd>{{ c.tagok }}</dd>{% endif %}
+      </dl>
+      {% if c.tech %}
+      <ul class="team-tech" aria-label="Technológiák">
+        {% for t in c.tech %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </article>
+  {% endfor %}
+  </div>
+</section>
+{% endfor %}

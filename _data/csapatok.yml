@@ -1,0 +1,192 @@
+# A műhelyt sikeresen befejező csapatok, évadonként (legújabb elöl).
+# Új évadot a lista elejére vegyél fel. Mezők csapatonként:
+#   nev (csapatnév), projekt (projekt címe), leiras, iskola, tanar, tagok, tech (lista)
+# Ami nincs meg, azt egyszerűen hagyd ki.
+
+- evad: "2025–2026"
+  zaro: "2026. február 14."
+  galeria: true
+  csapatok:
+    - nev: "DuplaA"
+      leiras: "Dinamikus keretrendszer modern autók szimulálásához Unityben"
+      iskola: "BMSZC Bolyai János Műszaki Technikum és Kollégium"
+      tech: [Unity]
+    - nev: "OutOfMemory"
+      leiras: "Programozásoktatást AI-jal támogató eszköz"
+      iskola: "Váci Piarista Gimnázium"
+      tech: [Python]
+    - nev: "404 not found"
+      leiras: "Űrben játszódó játék"
+      iskola: "Debreceni SZC Mechwart András Gépipari és Informatikai Technikum"
+      tech: [Unity]
+    - nev: "undefined"
+      leiras: "Többjátékos kártyajáték"
+      iskola: "Debreceni SZC Mechwart András Gépipari és Informatikai Technikum"
+      tech: [Godot]
+    - nev: "Bláthy-sock"
+      leiras: "Okos, önfenntartó növénykeltető rendszer IoT-technológiával"
+      iskola: "Bláthy Ottó Technikum, Szakképző Iskola és Kollégium, Tata"
+      tech: [Python, IoT]
+
+- evad: "2024–2025"
+  zaro: "2025. február 22."
+  galeria: true
+  csapatok:
+    - nev: "3+2G"
+      leiras: "Szerződések írását segítő alkalmazás"
+      iskola: "Ciszterci Rend Nagy Lajos Gimnáziuma és Kollégiuma, Pécs"
+      tech: [Electron]
+    - nev: "Friss hús"
+      leiras: "Kisállatok életét szimuláló játék"
+      iskola: "Váci Piarista Gimnázium, Vác"
+      tech: [Godot, MagicaVoxel]
+    - nev: "GG"
+      leiras: "Versenyfutás valós helyszínekre mobilalkalmazáson keresztül, közösségi élménnyel és társadalmilag hasznos kihívásokkal"
+      iskola: "Debreceni SZC Mechwart András Gépipari és Informatikai Technikum, Debrecen"
+      tech: [React Native, ASP.NET]
+    - nev: "IndexOutOfRange"
+      leiras: "Űrben játszódó, AI-t hasznosító játék"
+      iskola: "Debreceni SZC Mechwart András Gépipari és Informatikai Technikum, Debrecen"
+      tech: [Unity, C#, MySQL]
+    - nev: "Korlátlanul"
+      leiras: "AI-t hasznosító 2D-s játék"
+      iskola: "Kaposvári Táncsics Mihály Gimnázium, Kaposvár"
+      tech: [Kotlin, Firebase, Android Studio]
+    - nev: "Laborpatkányok"
+      leiras: "Közösségi programozási feladatgyűjtemény"
+      iskola: "Vegyes csapat több középiskolából"
+      tech: [PostgreSQL, "C# (backend)", "Next.js (frontend)"]
+    - nev: "Legionem"
+      leiras: "Gamifikált szokáskövető alkalmazás"
+      iskola: "Kecskeméti Református Gimnázium, Kecskemét"
+      tech: [Flutter, Firebase]
+    - nev: "Memento Mori"
+      leiras: "Tanulást segítő memóriajáték"
+      iskola: "Váci Piarista Gimnázium, Vác"
+      tech: [HTML, CSS, TypeScript, Vue.js, Bootstrap]
+    - nev: "moszafo"
+      leiras: "Továbbgondolt Bang! kártyajáték"
+      iskola: "BMSZC Pataky István Híradásipari és Informatikai Technikum, Budapest"
+      tech: [Svelte, TypeScript]
+    - nev: "PyFlare Dev Team:3"
+      leiras: "Vizuális platform a Python nyelv tanulásához"
+      iskola: "BMSZC Bolyai János Műszaki Technikum és Kollégium, Budapest"
+      tech: [Flask, Prisma, MySQL, Vite, React]
+    - nev: "Undefined"
+      leiras: "Űrben játszódó túlélő- és felfedezőjáték"
+      iskola: "Debreceni SZC Mechwart András Gépipari és Informatikai Technikum, Debrecen"
+      tech: [Godot, GDScript, GitHub]
+    - nev: "кот"
+      leiras: "Automatizált zenekönyvtár-kezelő alkalmazás"
+      iskola: "KRK Szilády Áron Gimnázium és Kollégium, Kiskunhalas"
+      tech: [Go, Angular, GitHub]
+
+- evad: "2023–2024"
+  csapatok:
+    - projekt: "Mobilos multiplayer kártyajáték"
+      iskola: "BMSZC Pataky István Híradásipari és Informatikai Technikum"
+      tanar: "Gödöny Péter"
+      tagok: "Ohári Pál Attila, Karkus Vendel László, Zoltai Martin, Kántor Gergely"
+      tech: [Next.js, Chakra UI, Framer Motion, Firebase]
+    - projekt: "Fájlmegosztó alkalmazás"
+      iskola: "Kaposvári Táncsics Mihály Gimnázium"
+      tanar: "Raskoványi Miklós"
+      tagok: "Pajor Kristóf János, Kemény Dániel, Király Balázs"
+      tech: [Java]
+    - projekt: "Ételpazarlást csökkentő alkalmazás"
+      iskola: "Gödöllői Török Ignác Gimnázium"
+      tanar: "Pásztorné Petrétei Noémi"
+      tagok: "Kriszt Sarolta, Gál Brigitta, Porgányi Anna"
+      tech: [Python, Flask, HTML, CSS, JavaScript]
+    - projekt: "Chatalkalmazás"
+      iskola: "Tolna Vármegyei SZC Apáczai Csere János Technikum és Kollégium"
+      tanar: "Noé Zoltán"
+      tagok: "Szili Bettina, Petrás Kata Magdolna, Rákóczi Viktória"
+      tech: [Python, Django, JavaScript, HTML, Bootstrap, Google Cloud]
+    - projekt: "Interaktív regény (visual novel) játék"
+      iskola: "BMSZC Pataky István Híradásipari és Informatikai Technikum"
+      tanar: "Gödöny Péter"
+      tagok: "Bruder György, Szekeres Emília, Willmann Máté"
+      tech: [Python, "Ren'Py"]
+    - projekt: "Kiadáskövető alkalmazás"
+      iskola: "Kecskeméti Református Gimnázium"
+      tanar: "Trepák Ildikó"
+      tagok: "Bodor Dániel, Juhász Dávid Edvárd, Hegymegi-Jakó Tamás"
+      tech: ["Android (natív)", "Python (backend)", Flask, Mindee Invoice API]
+    - projekt: "Mobilos fotóduplikációt megszüntető alkalmazás"
+      iskola: "BMSZC Pataky István Híradásipari és Informatikai Technikum"
+      tanar: "Gödöny Péter"
+      tagok: "Hatalyák Bálint, Kun Balázs Péter, Ambruzs Zsombor Vitéz"
+      tech: ["Android (natív)", Rust]
+    - projekt: "Játékosított, energiatakarékosságot elősegítő alkalmazás"
+      iskola: "Ciszterci Rend Nagy Lajos Gimnáziuma és Kollégiuma"
+      tanar: "Soproni Gábor"
+      tagok: "Illés Zalán Ádám, Gorsics András, Kristóf Ábel András"
+      tech: [Java, Android]
+    - projekt: "Telefonos iskolai tervezőalkalmazás"
+      iskola: "Kaposvári Táncsics Mihály Gimnázium"
+      tanar: "Raskoványi Miklós"
+      tagok: "Nagy Balázs Levente, Török Zsombor, Magyarcsik Dávid, Tóth Dávid"
+      tech: [Android Studio, Java, Firebase]
+    - projekt: "Ökológiaszimulátor alkalmazás"
+      iskola: "Kecskeméti Református Gimnázium"
+      tanar: "Trepák Ildikó"
+      tagok: "Miklós Gyula, Lévai Levente Gábor, Deli Imre László"
+      tech: [Unity]
+
+- evad: "2022–2023"
+  csapatok:
+    - projekt: "Webalapú chatalkalmazás"
+      iskola: "Kaposvári Táncsics Mihály Gimnázium"
+      tanar: "Raskoványi Miklós"
+      tagok: "Magyarcsik Dávid, Nagy Balázs Levente, Török Zsombor, Tóth Dávid, Kis Péter"
+      tech: [Web, Java]
+
+- evad: "2021–2022"
+  csapatok:
+    - projekt: "Bevásárlást támogató okoshűtő-alkalmazás"
+      iskola: "BMSZC Bolyai János Műszaki Technikum és Kollégium"
+      tanar: "Fülöp Márta"
+      tagok: "Ceglédi Zente, Havai Csongor, Gerencséri Huba"
+      tech: [Python, Web]
+    - projekt: "ChatBot AI-alkalmazás"
+      iskola: "BMSZC Bolyai János Műszaki Technikum és Kollégium"
+      tanar: "Fülöp Márta"
+      tagok: "Aujeszky Péter, Forrás Márk, Keller Bálint Krisztián"
+      tech: [Web, Python, Django]
+    - projekt: "Továbbgondolt akasztófajáték webre"
+      iskola: "Kaposvári Táncsics Mihály Gimnázium"
+      tanar: "Raskoványi Miklós"
+      tagok: "Kiss Péter, Csizmadia Dorián, Bíró László, Tóth Dávid, Kelemen Ákos"
+      tech: [Web, PHP]
+
+- evad: "2020–2021"
+  csapatok:
+    - projekt: "A Nap életciklusát bemutató alkalmazás"
+      iskola: "BMSZC Neumann János Informatikai Technikum, Budapest"
+      tanar: "Répásné Babucs Hajnalka"
+      tagok: "Horváth Gergely, Nagy Gábor, Kiss Kinga"
+      tech: [Android, Flutter]
+
+- evad: "2019–2020"
+  csapatok:
+    - projekt: "Csapatépítő mobiljáték"
+      iskola: "Dunakeszi Radnóti Miklós Gimnázium"
+      tanar: "Lutter András"
+      tagok: "Pósfay Benedek, Kovács András, Csutora Márton"
+      tech: ["Android (natív)", "Java (backend)", PostgreSQL]
+    - projekt: "Interneten keresztül elérhető multiplayer amőbajáték"
+      iskola: "Kaposvári Táncsics Mihály Gimnázium"
+      tanar: "Raskoványi Miklós"
+      tagok: "Kiss Tamás, Albrecht Bálint, Berekméri Barna, Horváth Bálint, Osztopáni Kristóf"
+      tech: [C#]
+    - projekt: "E-Kréta alternatív kliensalkalmazás"
+      iskola: "BMSZC Neumann János Informatikai Technikum, Budapest"
+      tanar: "Répásné Babucs Hajnalka"
+      tagok: "Bilik André Márk, Fekete Máté, Zsár Dániel, Orosi Ferenc"
+      tech: ["Android (natív)"]
+    - projekt: "Multiplayer videójáték"
+      iskola: "ELTE Bolyai János Gyakorló Általános Iskola és Gimnázium"
+      tanar: "Dobre Norbert"
+      tagok: "Szabó Bence Zsolt, Varga Tibor, Szatmári Soma, Bokor Levente, Szilvágyi Dániel"
+      tech: [C++, Unreal Engine]
