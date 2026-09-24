@@ -564,3 +564,27 @@ ul:has(> .task-list-item) {
   font-style: italic;
   margin-top: 2rem;
 }
+
+/* összecsukható fejezetnavigáció (toc_collapse: true) */
+.toc[data-collapse] #toc-list > li > ol { display: none; }
+.toc[data-collapse] #toc-list > li.is-open > ol { display: block; margin-top: 0.2rem; }
+.toc[data-collapse] #toc-list > li > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.toc-count {
+  flex: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: var(--mint);
+  border-radius: 99px;
+  padding: 0.05rem 0.5rem;
+}
+@media (max-width: 900px) {
+  /* mobilon a listában minden ötlet látszik, hogy közvetlenül lehessen ugrani */
+  .toc[data-collapse] #toc-list > li > ol { display: block; }
+  .toc-count { background: var(--paper); }
+}

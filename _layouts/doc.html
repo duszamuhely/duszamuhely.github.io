@@ -20,7 +20,7 @@ layout: default
 </header>
 
 <div class="wrap doc">
-  <nav class="toc" aria-label="Fejezetek">
+  <nav class="toc" aria-label="Fejezetek"{% if page.toc_collapse %} data-collapse{% endif %}>
     <details class="toc-box" open>
       <summary>Fejezetek</summary>
       <ol id="toc-list"></ol>
@@ -70,6 +70,19 @@ layout: default
   });
   list.querySelectorAll('ol').forEach(function (o) { if (!o.children.length) o.remove(); });
 
+  // összecsukható mód: a fő fejezetek mellé kerül az alpontok száma
+  var collapse = document.querySelector('.toc').hasAttribute('data-collapse');
+  if (collapse) {
+    list.querySelectorAll(':scope > li').forEach(function (li) {
+      var sub = li.querySelector('ol');
+      if (!sub) return;
+      var n = document.createElement('span');
+      n.className = 'toc-count';
+      n.textContent = sub.children.length;
+      li.firstChild.appendChild(n);
+    });
+  }
+
   var box = document.querySelector('.toc-box');
   var mobile = window.matchMedia('(max-width: 900px)');
   function syncOpen() { if (mobile.matches) box.removeAttribute('open'); else box.setAttribute('open', ''); }
@@ -86,6 +99,13 @@ layout: default
     links.forEach(function (l) { if (l.h.offsetTop <= y) active = l; });
     links.forEach(function (l) { l.a.removeAttribute('aria-current'); });
     if (active) active.a.setAttribute('aria-current', 'true');
+    if (collapse) {
+      list.querySelectorAll(':scope > li').forEach(function (li) { li.classList.remove('is-open'); });
+      if (active) {
+        var top = active.a.closest('#toc-list > li');
+        if (top) top.classList.add('is-open');
+      }
+    }
   }
   window.addEventListener('scroll', mark, { passive: true });
   mark();
