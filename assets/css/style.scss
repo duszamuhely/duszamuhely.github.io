@@ -861,3 +861,64 @@ ul:has(> .task-list-item) {
 .article-more ul { list-style: none; padding: 0; margin: 0 0 1.5rem; }
 .article-more li { margin-bottom: 0.5rem; }
 .article-more li span { color: var(--ink-soft); }
+
+/* ---------- Mentorok ---------- */
+.doc-content > .mentor-list { max-width: 54rem; }
+.mentor {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+.mentor:first-child { margin-top: 1.5rem; }
+.mentor-avatar {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  color: #24443F;
+  background: var(--peach);
+}
+.mentor:nth-child(3n+2) .mentor-avatar { background: #CDEBD9; }
+.mentor:nth-child(3n) .mentor-avatar { background: var(--green-deep); color: #fff; }
+.mentor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* a mentor neve itt nem kap fejezetelválasztó vonalat és csíkot */
+.doc-content .mentor h2 {
+  margin: 0 0 0.4rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.5rem;
+  scroll-margin-top: 1.5rem;
+}
+.doc-content .mentor h2::before { display: none; }
+.mentor-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.9rem; }
+.mentor-tags span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--green-deep);
+  border-radius: 99px;
+  padding: 0.15rem 0.65rem;
+}
+.mentor-skills-title {
+  font-weight: 600;
+  color: var(--green-deep);
+  margin: 1.25rem 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.mentor-skills { margin-top: 0; }
+
+@media (max-width: 560px) {
+  .mentor { grid-template-columns: 1fr; gap: 0.9rem; }
+  .mentor-avatar { width: 4.25rem; height: 4.25rem; font-size: 1.3rem; }
+}

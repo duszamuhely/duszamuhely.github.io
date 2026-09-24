@@ -1,0 +1,29 @@
+---
+layout: doc
+title: Mentorok
+subtitle: Iparban dolgozó szakemberek, akik a csapatokat végigkísérik a műhelyen
+permalink: /mentorok/
+---
+<p>A mentorok önkéntesen, a szabadidejükben vállalják, hogy egy-egy csapatot végigkísérnek a műhelyen. Segítenek a tervezésben, a felmerülő problémák megoldásában és az eszközök használatában, visszajelzést adnak a prezentációra, és hetente egyeztetnek a csapattal. Hogy pontosan mi a mentor szerepe, azt a <a href="{{ '/modszertani-utmutato/' | relative_url }}">módszertani útmutató</a> írja le.</p>
+
+<div class="mentor-list">
+{% for m in site.data.mentorok %}
+  {% assign nevreszek = m.nev | split: " " %}
+  <section class="mentor">
+    <div class="mentor-avatar" aria-hidden="true">
+      {% if m.foto %}<img src="{{ m.foto | relative_url }}" alt="">{% else %}{% for r in nevreszek limit: 2 %}{{ r | slice: 0 }}{% endfor %}{% endif %}
+    </div>
+    <div class="mentor-body">
+      <h2>{{ m.nev }}</h2>
+      {% if m.cimkek %}<p class="mentor-tags">{% for c in m.cimkek %}<span>{{ c }}</span>{% endfor %}</p>{% endif %}
+      {% for p in m.bemutatkozas %}<p>{{ p }}</p>{% endfor %}
+      {% if m.kompetenciak %}
+      <p class="mentor-skills-title">Fő kompetenciák</p>
+      <ul class="team-tech mentor-skills">
+        {% for k in m.kompetenciak %}<li>{{ k }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </section>
+{% endfor %}
+</div>

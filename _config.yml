@@ -7,19 +7,19 @@ jelentkezes_url: ""
 # Menü a fejlécben. Egy pont lehet sima link (title + url),
 # vagy lenyíló csoport (title + items).
 nav:
-  # Ha elkészül a Rólunk és a Mentorok oldal, vedd ki a # jeleket ebből a blokkból:
+  # Ha elkészül a Rólunk oldal, vedd ki a # jeleket ebből a blokkból:
   # - title: A műhelyről
   #   items:
   #     - title: Rólunk
   #       url: /rolunk/
-  #     - title: Mentorok
-  #       url: /mentorok/
   - title: Jelentkezőknek
     items:
       - title: Módszertani útmutató
         url: /modszertani-utmutato/
       - title: Projektötletek
         url: /otletek/
+      - title: Mentorok
+        url: /mentorok/
   - title: Korábbi évek
     items:
       - title: Csapatok

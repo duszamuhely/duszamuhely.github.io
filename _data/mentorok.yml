@@ -1,0 +1,54 @@
+# A mentorok bemutatkozása. Mezők:
+#   nev, cimkek (pl. alapító mentor), foto (opcionális, pl. /assets/img/mentorok/nev.jpg),
+#   bemutatkozas (bekezdések listája), kompetenciak (lista)
+
+- nev: Badics Alex
+  bemutatkozas:
+    - "Általános iskolában kezdtem a hobbiprogramozást, és mind ott, mind középiskolában részt vettem sok versenyen, többek között a Dusza versenyen is. Immár 12 éve dolgozom a szektorban változatos területeken: biztonság, webfejlesztés, IT-management, appfejlesztés, autóvezérlő szoftverek stb. Szakmai tapasztalatom első felét programozóként, a második felét termékmenedzserként töltöttem, bár ez nem azt jelenti, hogy a programozást abbahagytam."
+    - "Kiemelten fontosnak tartom, hogy egy szoftver ne legyen öncélú: valódi ügyféligényt elégítsen ki, és legalább egy valamiben jobb legyen a versenytársainál. Az, hogy „mi van a színfalak mögött”, például szuperbonyolult algoritmusok vagy csak néhány meglévő library összeszigszalagozva, teljesen másodlagos. Technológiailag a fő profilom a natív szoftverek PC-n vagy beágyazott eszközökön, de fejlesztettem weboldalt, szervert, mobilappot… Egy idő után minden nyelv hasonlít valamelyik korábban megtanultra, szóval nem szoktam megijedni az új technológiáktól vagy területektől."
+  kompetenciak: [C++, Rust, Python, Játékfejlesztés, Beágyazott szoftverfejlesztés, Szerveroldali démonok, Termékmenedzsment, Fejlesztési folyamatok]
+
+- nev: Dusza Anikó
+  bemutatkozas:
+    - "Középiskolás koromban kezdtem programozni, majd a Debreceni Egyetemre mentem, ahol programtervező informatikusként végeztem. Még egyetemi tanulmányaim alatt kezdtem érdeklődni az adatbányászat és a mesterséges intelligencia iránt, és a diplomamunkámat is egy szövegbányászati témából írtam."
+    - "Az egyetem óta különböző informatikai munkakörökben dolgoztam: voltam Java-fejlesztő, technical supportos, és foglalkoztam master data managementtel is. 2020 óta dolgozom adatközelibb munkakörben, amelyben többféle feladatom is volt: algoritmusok fejlesztése R-ben és Pythonban, alkalmazásfejlesztés, riportok készítése, adatbázisok létrehozása és kezelése."
+    - "A vezetéknevem ellenére nem tudok rokoni kapcsolatról Dusza tanár úrral, persze egy családfakutatás érdekes eredményt hozhat."
+  kompetenciak: [Python, Adatbázis-tervezés, Adatvizualizáció, Prezentációk készítése és tartása, Power BI, Excel, Scrum, Csapatmunka]
+
+- nev: Korom Szilárd
+  cimkek: [alapító mentor]
+  bemutatkozas:
+    - "Korom Szilárd vagyok, végzettségem szerint középiskolai matematikatanár és középiskolai informatikatanár. 2017 óta tanítok az ELTE Informatikai Karán programozáshoz kapcsolódó kurzusokat programtervező informatikus és informatikatanár hallgatóknak. 2020 óta az egyetem Doktori Iskolájába járok, így az oktatás mellett kutatási projektekben is részt veszek. Főbb érdeklődési köröm a programozásoktatási módszertanok, a valós idejű rendszerek és az okoseszközök. Egy évig tanítottam a Madách Imre Gimnáziumban, de azóta a középszintű oktatással felhagytam, helyette programozóként dolgozom a Morgan Stanleynél, ahol jelenleg vezető fejlesztő pozícióban vagyok."
+    - "Középiskolás koromban rendszeres résztvevője voltam a Dusza programozói versenynek. Később csapatot is készítettem fel, majd versenyfeladatot írtam, és zsűriként is jelen voltam, illetve vagyok."
+    - "Amikor én tanultam programozni, nem volt lehetőségem szoftverfejlesztőtől segítséget kérni, így a legtöbb fogást autodidakta módon sajátítottam el. A Dusza Műhely mentoraként segíteni szeretnék a programozni vágyóknak, hogy kérdezhessenek, és valódi, működő alkalmazásokat készíthessenek."
+  kompetenciak: [Java backend, "C# (.NET, ASP.NET)", SQL, Clean code, Refaktorálás, Tesztelés, Continuous Integration, Shell script, PowerShell script, Raspberry Pi, Arduino, Csapatmunka]
+
+- nev: Kovács Enikő
+  bemutatkozas:
+    - "Gyerekkoromban szerettem számítógépes játékokat játszani, valamint apukámmal különálló alkatrészekből PC-ket összeszerelni. Programozni tanulni viszont csak később, a gyermekeimmel otthon töltött évek alatt kezdtem."
+    - "A hobbiból foglalkozás lett, így lassan öt éve dolgozom ezen a területen. Backendfejlesztőként a Java nyelv és a Spring Boot keretrendszer használatában vagyok otthon, a jelenlegi munkahelyemen pedig a frontendfejlesztést is egyre nagyobb lelkesedéssel végzem az Angular segítségével. Nagyvállalati, belső céges használatra szánt webes alkalmazásokat készítünk. Korábban két éven keresztül kezdőket is oktattam, mentoráltam."
+    - "A 2023/2024-es tanévben már részt vettem a Dusza Műhelyben mentorként, a csapatommal nagyon jól tudtunk együtt dolgozni, ezért örömmel fogadtam el ismét a felkérést."
+  kompetenciak: [Java, Spring Boot, HTML, CSS, TypeScript, Angular, Clean code, Konténerizáció (Docker)]
+
+- nev: Marhefka István
+  cimkek: [alapító mentor, a műhely vezetője]
+  bemutatkozas:
+    - "9 éves koromban kezdtem a programozást, gyerekkoromban sokat jártam programozási versenyekre. Büszke vagyok arra, hogy 1997-ben ezüstérmes lettem a Nemzetközi Informatikai Diákolimpián. Később 20 éven át dolgoztam professzionális szoftverfejlesztőként, és mindig azt kerestem, hogyan tudok a felhasználóknak olyan szoftvert készíteni, ami számukra hasznos, és amelyben én (és a csapattársaim) is a legjobb szakmai megoldásokat tudjuk megalkotni."
+    - "Jelenleg agilis szoftverfejlesztő csapatokat, szervezeteket támogatok agilis coachként és szoftverarchitektként saját cégemmel, az Agiluu-val. Célom, hogy a szakmai kiválóságra való törekvés közvetítésén túl támogassam a velem dolgozókat abban is, hogy saját tehetségeiket a csapatmunka során felfedezhessék és kiaknázhassák."
+    - "A Dusza Műhely egyik alapító mentora vagyok, és a Dusza versenyen is kezdetektől fogva részt veszek szervezőként és zsűritagként. Dusza Árpád tanár úr, akinek emlékére a műhelyt és a versenyt is létrehoztuk, mintegy 30 évvel ezelőtt a tanárom volt. A vele való kapcsolatom és a közös munka nagyban meghatározta későbbi szakmai pályámat, amiért hálás vagyok neki."
+  kompetenciak: [Java backend, "Adatbázisok (SQL, NoSQL)", "Tervezés (UI, adatbázis, architektúra)", Projektmenedzsment, Clean code, Refaktorálás, Test Driven Development, Continuous Integration, Csapatmunka]
+
+- nev: Miglász Dániel
+  cimkek: [alapító mentor]
+  bemutatkozas:
+    - "Nagyjából 12 éves koromban kezdtem a programozással foglalkozni, és a középiskolában, valamint az egyetemen is jártam különböző programozással kapcsolatos versenyekre, ahol országos szinten több szép eredményt is el tudtam érni."
+    - "Gyakornokként több munkahelyet, területet kipróbáltam, így belekóstoltam a quality, a tesztelés és a fejlesztés világába is, valamint különböző módszertanokban, például az agilitásban is szereztem tapasztalatot. Több mint 6 éve a Boschnál dolgozom, eleinte szoftverfejlesztőként, majd team leaderként, jelenleg pedig product owner munkakörben, vezetéstámogató rendszerek fejlesztésén."
+    - "A Dusza versenyen először versenyzőként vettem részt, majd korábbi iskolám csapatának kísérőjeként és felkészítőjeként tértem vissza, nem sokkal később pedig a szervező és zsűri csapat részévé is váltam. Fontosnak tartom, hogy lehetőséget biztosítsunk arra, hogy a diákok megtapasztalhassák, mi a különbség programozás és szoftverfejlesztés között, milyen az otthoni programozgatás helyett csapatban és projektben gondolkodva valamit megalkotni, különböző célokat megfogalmazni és azokat elérni. A Dusza Műhely egyik alapító mentoraként ezt a missziót próbálom képviselni."
+  kompetenciak: [C/C++, Clean code, Projektmenedzsment, Csapatmunka, Tesztelés]
+
+- nev: Murányi Sándor
+  bemutatkozas:
+    - "2000-ben kezdődött az informatikai pályafutásom, amikor barátaim hatására eladtam az ajándékba kapott mini hifitornyomat, és vettem belőle egy ház nélküli, összetákolt PC-t. Mire 2007-ben megérkeztem az első munkahelyemre, már egyedül megvalósítottam több projektet kisebb cégeknél, és egy saját magam által megálmodott és összerakott képmegosztó oldal létrehozásán is túl voltam."
+    - "Mivel minden projektemen és minden cégnél, ahol dolgoztam, a projekt majdnem teljes skáláján ott voltam (üzlet, infrastruktúra, fejlesztés és csapatirányítás), rengeteg tapasztalatot sikerült összegyűjtenem csapatok és problémák megfelelő szervezésében és megvalósításában úgy, hogy közben a fejlesztés nagyon is aktív résztvevője maradtam. Arra vagyok a legbüszkébb, hogy már nem az első cégnél sikerül működő csapatot összeraknom, miközben hitelesen tudom őket segíteni a napi feladatok megvalósításában."
+    - "Mivel rendszeresen részt veszek játékfejlesztői game jameken, nagyon hatékonyan tudom segíteni a csapatokat abban, hogy határidőre szállítsanak valamit, ami működik, és a lehetőségekhez mérten közel áll az elvárásokhoz."
+  kompetenciak: [Blockchain, Java, TypeScript, Angular, Rust, Clean code, CI, Automatizálás, Docker, SQL/NoSQL, Tervezés, Projektmenedzsment, Refaktorálás]
