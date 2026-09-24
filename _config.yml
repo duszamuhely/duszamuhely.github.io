@@ -1,28 +1,25 @@
 title: Dusza Műhely
 description: Dusza Árpád Programozóműhely – középiskolás csapatok projektmunkája iparban dolgozó mentorokkal
 
-# Jelentkezési űrlap linkje. Amíg üres, a gomb "hamarosan" feliratú és nem kattintható.
+# Jelentkezési űrlap linkje. Amíg üres, a menüsor Jelentkezés gombja a főoldal
+# jelentkezési részére visz, a főoldali gomb pedig "hamarosan" feliratú.
 jelentkezes_url: ""
 
 # Menü a fejlécben. Egy pont lehet sima link (title + url),
 # vagy lenyíló csoport (title + items).
+# A Jelentkezés gomb nem itt van, azt a menüsor végére a layout teszi ki.
 nav:
-  # Ha elkészül a Rólunk oldal, vedd ki a # jeleket ebből a blokkból:
-  # - title: A műhelyről
-  #   items:
-  #     - title: Rólunk
-  #       url: /rolunk/
-  - title: Jelentkezőknek
+  - title: A műhelyről
     items:
+      - title: A műhelyről röviden
+        url: /a_muhelyrol/
       - title: Módszertani útmutató
         url: /modszertani-utmutato/
-      - title: Projektötletek
+      - title: Projektötletek jelentkezéshez
         url: /otletek/
       - title: Mentorok
         url: /mentorok/
-  - title: Korábbi évek
-    items:
-      - title: Csapatok
+      - title: Korábbi csapatok
         url: /csapatok/
       - title: Beszámolók
         url: /beszamolok/

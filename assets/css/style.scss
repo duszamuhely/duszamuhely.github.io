@@ -758,7 +758,7 @@ ul:has(> .task-list-item) {
   box-shadow: 0 10px 30px rgba(36, 68, 63, 0.14);
   padding: 0.4rem;
 }
-.nav-group:last-child .nav-menu { left: auto; right: 0; }
+.nav-group .nav-menu { left: auto; right: 0; }
 .nav-group.is-open .nav-menu { display: block; }
 .site-nav .nav-menu a {
   display: block;
@@ -921,4 +921,113 @@ ul:has(> .task-list-item) {
 @media (max-width: 560px) {
   .mentor { grid-template-columns: 1fr; gap: 0.9rem; }
   .mentor-avatar { width: 4.25rem; height: 4.25rem; font-size: 1.3rem; }
+}
+
+/* ---------- Rólunk ---------- */
+.pillars {
+  list-style: none;
+  margin: 1.75rem 0 0.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6rem;
+}
+.doc-content .pillars li {
+  margin: 0;
+  padding: 1rem 0.75rem;
+  border-radius: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.5rem;
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.25;
+  background: var(--mint);
+  color: var(--ink);
+}
+.doc-content .pillars li:nth-child(2n) { background: var(--orange-tint); }
+.doc-content .pillars li:nth-child(3) { background: var(--green-deep); color: #fff; }
+@media (max-width: 700px) {
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .doc-content .pillars li:last-child { grid-column: 1 / -1; }
+}
+
+.mission {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 5px solid var(--orange);
+  background: var(--orange-tint);
+  border-radius: 0 14px 14px 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.about-links { color: var(--ink-soft); }
+
+.milestones {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+  position: relative;
+}
+.milestones::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--line);
+}
+.doc-content .milestones li {
+  position: relative;
+  padding: 0 0 1.5rem 2.5rem;
+  margin: 0;
+}
+.milestones li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 4px solid var(--green);
+}
+.milestones li.is-now::before { background: var(--orange); border-color: var(--orange); }
+.milestones strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  margin-bottom: 0.15rem;
+}
+.milestones li.is-now strong { color: var(--orange); }
+.milestones span { color: var(--ink-soft); }
+
+/* Jelentkezés gomb a menüsorban */
+.site-nav .nav-cta {
+  display: inline-block;
+  background: var(--orange);
+  color: #24443F;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--orange);
+  border-radius: 99px;
+  line-height: 1.2;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.site-nav .nav-cta:hover {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: #fff;
+}
+.site-nav .nav-cta:focus-visible { outline-offset: 3px; }
+@media (max-width: 640px) {
+  .nav-group .nav-menu { left: 0; right: auto; max-width: calc(100vw - 2rem); }
+  .site-nav .nav-menu a { white-space: normal; }
 }

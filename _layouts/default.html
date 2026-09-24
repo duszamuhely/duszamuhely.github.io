@@ -33,6 +33,11 @@
       <a class="nav-link" href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
         {% endif %}
       {% endfor %}
+      {% if site.jelentkezes_url != "" %}
+      <a class="nav-cta" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezés</a>
+      {% else %}
+      <a class="nav-cta" href="{{ '/#jelentkezes' | relative_url }}">Jelentkezés</a>
+      {% endif %}
     </nav>
   </div>
 </header>

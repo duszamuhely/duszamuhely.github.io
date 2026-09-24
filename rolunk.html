@@ -1,0 +1,57 @@
+---
+layout: doc
+title: A Dusza-műhely
+subtitle: Középiskolás programozó csapatok műhelye 
+permalink: /a_muhelyrol/
+---
+{% assign projektek = 0 %}
+{% for e in site.data.csapatok %}{% assign projektek = projektek | plus: e.csapatok.size %}{% endfor %}
+
+<p>Gyakorló szoftverfejlesztők vagyunk. A Dusza Árpád Programozóműhelyt a Földes Ferenc Gimnázium egykori, országosan ismert informatikatanára emlékére hoztuk létre. Célunk, hogy középiskolás diákoknak és tanáraiknak lehetőséget adjunk saját programozási projektjeik megvalósítására, miközben hangsúlyt fektetünk a szoftverfejlesztési folyamatokra, a minőségre, a csapatmunkára és a személyes kapcsolatok építésére.</p>
+
+<ul class="pillars" aria-label="Amiről a műhely szól">
+  <li>Egyedi projektek</li>
+  <li>Mentorálás</li>
+  <li>Csapatmunka</li>
+  <li>Közösség</li>
+  <li>Események</li>
+</ul>
+
+<h2>Missziónk</h2>
+
+<p>Gyakorló szakemberekként nagyon jól tudjuk, mekkora kihívást jelent az új technológiák és a szoftverfejlesztésben használt különféle eszközök és módszertanok folyamatos követése és elsajátítása.</p>
+
+<blockquote class="mission">A programozóműhely missziója, hogy lehetőséget biztosítson a középiskolás diákoknak és felkészítő tanáraiknak ezen modern ismeretek megszerzésére azáltal, hogy saját projektötleteiket megvalósítják a mentorok kíséretében.</blockquote>
+
+<h2>Fókuszunk</h2>
+
+<p>A minden tanévben megrendezett programozóműhely fókuszában az elkészítendő projektötlet mint termék elkészítése és az ehhez szükséges ismeretek és gyakorlat megszerzése áll.</p>
+
+<p>A programnak nem célja az informatika/digitális kultúra érettségire való felkészítés vagy a technikumok vizsgaremekének elkészítése. Elvárás azonban az alapszintű programozási ismeretek megléte és az önálló fejlődés iránti elköteleződés a választott technológiákban.</p>
+
+<h2>Hogyan működik?</h2>
+
+<p>Egy körülbelül 2-3 hónapos munka során minden csapat megvalósítja a saját ötletét. A megvalósítás során szerzett tapasztalatait és haladását a rendszeresen szervezett közös workshopokon mutatja be a többi csapatnak, a program zárásaként pedig nagyobb közönség előtt prezentálja az elért eredményeket.</p>
+
+<p>A csapatok szakmai mentorálásán túl fontos szerep jut a felkészítő tanároknak is. Ők segítenek abban, hogy a diákok valóban csapatként tudjanak együtt dolgozni: csapatot építenek belőlük, és segítenek a szervezési feladatokban, például az iskolai kötelezettségek és a műhelybeli munka egyensúlyának megteremtésében vagy az utazásban.</p>
+
+<p>A programozóműhely erősen épít a személyes találkozásokra, amelyek célja a csapatok és mentoraik, illetve a csapatok egymás közötti személyes kapcsolatainak kialakítása.</p>
+
+<p class="about-links">A részleteket a <a href="{{ '/modszertani-utmutato/' | relative_url }}">módszertani útmutató</a> írja le, a mentorok pedig a <a href="{{ '/mentorok/' | relative_url }}">Mentorok</a> oldalon mutatkoznak be.</p>
+
+<h2>Történetünk</h2>
+
+<ol class="milestones">
+  <li><strong>2008</strong><span>Az Informatika-Számítástechnika Tanárok Egyesülete (ISZE) elindítja a Dusza Árpád Országos Programozói Emlékversenyt, amelyen csapatok közös alkalmazásfejlesztési feladatot oldanak meg.</span></li>
+  <li><strong>2019 tavasza</strong><span>A verseny tapasztalataira építve megszületik a programozóműhely ötlete: a diákok saját projektötleteiken, hosszabb ideig, iparban dolgozó mentorok támogatásával, csapatban és projektszerűen dolgozhassanak.</span></li>
+  <li><strong>2019–2020</strong><span>Az első évad: négy csapat fejezi be sikeresen a műhelyt.</span></li>
+  <li><strong>2023–2024</strong><span>Az ISZE mellé az ELTE Informatikai Kara is társszervezőként kapcsolódik be, és helyszínt biztosít a workshopoknak és a záróeseménynek.</span></li>
+  <li><strong>2024–2025</strong><span>Rekordszámú, 14 csapat vesz részt a műhelyben, köztük kísérleti jelleggel egy olyan csapat is, amelynek tagjai az ország különböző iskoláiból érkeztek.</span></li>
+  <li class="is-now"><strong>2026–2027</strong><span>Megújult formában indul a műhely: két workshoppal és egy záróeseménnyel. <a href="{{ '/' | relative_url }}">Jelentkezés és időpontok</a></span></li>
+</ol>
+
+<p>2019 óta {{ projektek }} csapat fejezte be sikeresen a műhelyt. A projektjeiket a <a href="{{ '/csapatok/' | relative_url }}">Csapatok</a> oldalon, a résztvevők és szervezők írásait a <a href="{{ '/beszamolok/' | relative_url }}">Beszámolók</a> között találod.</p>
+
+<h2>Szervezők</h2>
+
+<p>A Dusza Árpád Programozóműhelyt az <a href="https://isze.hu/">Informatika-Számítástechnika Tanárok Egyesülete</a> gondozza és szervezi, az <a href="https://www.inf.elte.hu/">ELTE Informatikai Kar</a> társszervezésében. A mentorok önkéntesen, szabadidejükben vállalják a csapatok kísérését.</p>
