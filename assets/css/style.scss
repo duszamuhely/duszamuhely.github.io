@@ -1182,3 +1182,54 @@ ul:has(> .task-list-item) {
   padding-top: 2.5rem;
   border-top: 1px solid var(--line);
 }
+
+/* A jelentkezési határidő pöttye pulzál az idővonalon */
+@keyframes deadline-pulse {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(239, 132, 81, 0.75), 0 0 0 0 rgba(239, 132, 81, 0.45); }
+  15%  { transform: scale(1.25); }
+  30%  { transform: scale(1); }
+  70%  { box-shadow: 0 0 0 16px rgba(239, 132, 81, 0), 0 0 0 26px rgba(239, 132, 81, 0); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(239, 132, 81, 0), 0 0 0 0 rgba(239, 132, 81, 0); }
+}
+.timeline .is-deadline::before {
+  animation: deadline-pulse 1.6s ease-out infinite;
+}
+/* aki a rendszerében kikapcsolta az animációkat, annál álló gyűrű marad */
+@media (prefers-reduced-motion: reduce) {
+  .timeline .is-deadline::before {
+    animation: none;
+    box-shadow: 0 0 0 6px rgba(239, 132, 81, 0.28);
+  }
+}
+
+/* Jelentkezés gombok: időnként átsuhanó fénycsík */
+.apply-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.apply-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.45) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: apply-shine 5s ease-in-out infinite;
+}
+/* a menüsor gombja kicsit később csillan, hogy ne egyszerre villanjon minden */
+.site-nav .apply-btn::after { animation-delay: 2.5s; }
+/* rámutatáskor és a felugró ablakban nincs csillogás */
+.apply-btn:hover::after,
+.apply-dialog .apply-btn::after { display: none; }
+
+@keyframes apply-shine {
+  0%, 75% { left: -60%; }
+  100%    { left: 130%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .apply-btn::after { display: none; }
+}
