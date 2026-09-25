@@ -58,6 +58,22 @@
 </footer>
 
 <script>
+// rögzített menüsor: a magasságát CSS-változóba írjuk (a horgonyok és a fejezetnavigáció ehhez igazodik),
+// görgetéskor pedig finom árnyékot kap
+(function () {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  function setHeight() {
+    document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+  function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 4); }
+  setHeight();
+  onScroll();
+  window.addEventListener('resize', setHeight);
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+<script>
 // lenyíló menük: kattintásra nyílnak, kívülre kattintásra vagy Escape-re záródnak
 (function () {
   var groups = document.querySelectorAll('.nav-group');

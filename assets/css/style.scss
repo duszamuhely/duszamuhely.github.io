@@ -1233,3 +1233,32 @@ ul:has(> .task-list-item) {
 @media (prefers-reduced-motion: reduce) {
   .apply-btn::after { display: none; }
 }
+
+/* ---------- Rögzített menüsor ---------- */
+:root { --header-h: 4.5rem; } /* a pontos magasságot a layout szkriptje állítja be */
+html { scroll-padding-top: calc(var(--header-h) + 0.75rem); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  backdrop-filter: saturate(1.4) blur(10px);
+  transition: box-shadow 0.2s ease;
+}
+.site-header.is-scrolled { box-shadow: 0 4px 18px rgba(36, 68, 63, 0.1); }
+
+/* a fejezetnavigáció a menüsor alatt tapadjon (csak asztali nézetben tapad) */
+@media (min-width: 901px) {
+  .toc {
+    top: calc(var(--header-h) + 1.5rem);
+    max-height: calc(100vh - var(--header-h) - 3rem);
+  }
+}
+/* a horgonyra ugráskor ne a menüsor alá kerüljön a címsor */
+.doc-content h2,
+.doc-content h3,
+.doc-content .team-card h3,
+.doc-content .story-card h3,
+.doc-content .mentor h2 { scroll-margin-top: calc(var(--header-h) + 1rem); }
