@@ -73,6 +73,49 @@
 </footer>
 
 <script>
+// "Ilyen projektek születtek": minden betöltéskor 3 véletlen projekt a csapatok adataiból
+(function () {
+  var box = document.getElementById('project-cards');
+  var data = document.getElementById('project-data');
+  if (!box || !data) return;
+  var all;
+  try { all = JSON.parse(data.textContent); } catch (e) { return; }
+  // a leírással rendelkező projekteket előnyben részesítjük, mert azok beszédesebbek
+  var withDesc = all.filter(function (p) { return p.leiras; });
+  var pool = withDesc.length >= 3 ? withDesc : all;
+  for (var i = pool.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp; }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
+  box.innerHTML = pool.slice(0, 3).map(function (p) {
+    var desc = p.leiras || (p.cim !== p.projekt ? p.projekt : '');
+    var tech = (p.tech || []).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
+    return '<article class="team-card"><h3>' + esc(p.cim) + '</h3>' +
+      (desc ? '<p class="team-desc">' + esc(desc) + '</p>' : '') +
+      '<p class="project-meta">' + esc(p.iskola) + ' · ' + esc(p.evad) + '</p>' +
+      (tech ? '<ul class="team-tech">' + tech + '</ul>' : '') + '</article>';
+  }).join('');
+})();
+
+// számok felpörgetése, amikor a sáv a képernyőre ér
+(function () {
+  var nums = document.querySelectorAll('[data-count]');
+  if (!nums.length || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function run(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10), start = null, dur = 1400;
+    function step(ts) {
+      if (!start) start = ts;
+      var k = Math.min((ts - start) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  nums.forEach(function (el) { el.textContent = '0'; io.observe(el); });
+})();
+</script>
+<script>
 // visszaszámláló a jelentkezési határidőig: <p data-countdown="2026-12-18T23:59:59+01:00">
 (function () {
   document.querySelectorAll('[data-countdown]').forEach(function (el) {
@@ -92,7 +135,7 @@
 
 // szakaszok finom beúszása görgetéskor
 (function () {
-  var sel = '.season .wrap > *, .apply-info > *, .apply-card, .doc-content > *, .team-card, .story-card, .mentor, .flow li, .pillars li, .milestones li, .gallery-section';
+  var sel = '.season .wrap > *, .showcase > *, .project-cards .team-card, .apply-info > *, .apply-card, .doc-content > *, .team-card, .story-card, .mentor, .flow li, .pillars li, .milestones li, .gallery-section';
   var els = document.querySelectorAll(sel);
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var io = new IntersectionObserver(function (entries) {

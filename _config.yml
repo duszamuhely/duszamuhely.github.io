@@ -6,6 +6,10 @@ description: Dusza Árpád Programozóműhely – középiskolás csapatok proje
 # jelentkezési részére visz, a főoldali gomb pedig "hamarosan" feliratú.
 jelentkezes_url: ""
 
+# A főoldali számok sávjában mutatott mentorszám (az eddigi összes mentor).
+# A Mentorok oldalon csak az aktuális mentorok szerepelnek.
+mentorok_szama: 15
+
 # Időzóna: a lábléc "Utoljára frissítve" időpontja (a build ideje) magyar idő szerint jelenjen meg
 timezone: Europe/Budapest
 

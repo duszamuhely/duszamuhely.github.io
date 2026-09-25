@@ -1311,3 +1311,66 @@ html { scroll-padding-top: calc(var(--header-h) + 0.75rem); }
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Főoldal: számok és korábbi projektek ---------- */
+.showcase { padding-top: 5rem; }
+.stats {
+  list-style: none;
+  margin: 0 0 3.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.stats li {
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  border-radius: 18px;
+  background: var(--orange-tint);
+}
+.stats li:nth-child(2n) { background: var(--mint); }
+.stats strong {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--apply);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.4rem;
+}
+.stats li:nth-child(2n) strong { color: var(--green-deep); }
+@media (prefers-color-scheme: dark) {
+  .stats strong { color: #FFA57A; }
+  .stats li:nth-child(2n) strong { color: var(--green); }
+}
+.stats span { color: var(--ink-soft); font-weight: 500; }
+@media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+.showcase-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.showcase-head h2 { margin: 0; }
+.showcase-head a { font-weight: 600; }
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 900px) { .project-cards { grid-template-columns: 1fr; } }
+.project-cards .team-card h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+.project-cards .team-tech li {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--orange-tint);
+  color: var(--ink);
+  border-radius: 99px;
+  padding: 0.15rem 0.6rem;
+}
+.project-meta { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 0.9rem; }

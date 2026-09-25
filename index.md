@@ -40,6 +40,38 @@ title: Kezdőlap
   </div>
 </section>
 
+{% assign projektek = 0 %}{% assign iskolak = "" %}
+{% for e in site.data.csapatok %}{% assign projektek = projektek | plus: e.csapatok.size %}{% for c in e.csapatok %}{% assign isk = c.iskola | split: ", " | first %}{% unless isk contains "Vegyes" %}{% assign iskolak = iskolak | append: isk | append: "|" %}{% endunless %}{% endfor %}{% endfor %}
+{% assign iskolak = iskolak | split: "|" | uniq %}
+{% assign mentorszam = site.mentorok_szama | default: site.data.mentorok.size %}
+<section class="showcase wrap" aria-labelledby="showcase-title">
+  <ul class="stats" aria-label="A műhely számokban">
+    <li><strong data-count="{{ projektek }}">{{ projektek }}</strong><span>befejezett projekt</span></li>
+    <li><strong data-count="{{ site.data.csapatok.size }}">{{ site.data.csapatok.size }}</strong><span>évad 2019 óta</span></li>
+    <li><strong data-count="{{ iskolak.size }}">{{ iskolak.size }}</strong><span>iskola csapatai</span></li>
+    <li><strong data-count="{{ mentorszam }}">{{ mentorszam }}</strong><span>mentor segítette a csapatokat</span></li>
+  </ul>
+
+  <div class="showcase-head">
+    <h2 id="showcase-title">Ilyen projektek születtek</h2>
+    <a href="{{ '/csapatok/' | relative_url }}">Az összes korábbi projekt</a>
+  </div>
+  <div class="project-cards" id="project-cards">
+  {% assign elso = site.data.csapatok.first.csapatok %}
+  {% for c in elso limit: 3 %}
+    <article class="team-card">
+      <h3>{% if c.nev %}{{ c.nev }}{% else %}{{ c.projekt }}{% endif %}</h3>
+      {% if c.leiras %}<p class="team-desc">{{ c.leiras }}</p>{% endif %}
+      <p class="project-meta">{{ c.iskola }} · {{ site.data.csapatok.first.evad }}</p>
+      {% if c.tech %}<ul class="team-tech">{% for t in c.tech %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+    </article>
+  {% endfor %}
+  </div>
+  <script type="application/json" id="project-data">
+  [{% for e in site.data.csapatok %}{% for c in e.csapatok %}{"cim": {{ c.nev | default: c.projekt | jsonify }}, "leiras": {{ c.leiras | jsonify }}, "projekt": {{ c.projekt | jsonify }}, "iskola": {{ c.iskola | jsonify }}, "evad": {{ e.evad | jsonify }}, "tech": {{ c.tech | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}{% unless forloop.last %},{% endunless %}{% endfor %}]
+  </script>
+</section>
+
 <section class="apply-info wrap" id="hogyan-jelentkezz" aria-labelledby="apply-info-title">
   <h2 id="apply-info-title">Hogyan zajlik a jelentkezés?</h2>
   <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. <strong>Idén változtak a szabályok:</strong> az évadban két workshop és egy záróesemény lesz. Ezért ha korábban már részt vettetek a műhelyben, akkor is olvassátok el a felkészítő tanárotokkal együtt a <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">résztvevői útmutatót</a>, amely a részletes feltételeket tartalmazza.</p>
