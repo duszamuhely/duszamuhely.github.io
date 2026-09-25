@@ -1165,3 +1165,20 @@ ul:has(> .task-list-item) {
 @media (max-width: 560px) {
   .site-footer .updated { display: block; margin: 0.3rem 0 0; }
 }
+
+/* Jelentkezés gomb a főoldali szakaszok végén */
+.section-cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 2.25rem;
+}
+.section-cta p { margin: 0; color: var(--ink-soft); }
+.section-cta strong { color: var(--ink); }
+.section-cta--final {
+  justify-content: center;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}

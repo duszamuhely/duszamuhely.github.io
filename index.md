@@ -13,11 +13,7 @@ title: Kezdőlap
     A részvétel ingyenes.<br>
     Nincs saját ötleted? <a href="{{ '/otletek/' | relative_url }}">Inspirálódj a projektötlet-listánkból.</a></p>
     <div class="hero-actions">
-{% if site.jelentkezes_url != "" %}
-      <a class="apply-btn apply-btn--lg" href="{{ site.jelentkezes_url }}" target="_blank" rel="noopener">Jelentkezés</a>
-{% else %}
-      <a class="apply-btn apply-btn--lg" href="#jelentkezes" data-apply>Jelentkezés</a>
-{% endif %}
+{% include apply-button.html lg=true %}
       <p>Határidő: <strong>2026. december 18.</strong></p>
     </div>
   </div>
@@ -36,6 +32,9 @@ title: Kezdőlap
     <div class="venue">
       <p><strong>A workshopok és a záróesemény helyszíne:</strong> ELTE Informatikai Kar, Budapest XI. kerület. A pontos helyszínt a résztvevők létszámától függően választjuk ki.</p>
       <p class="venue-note">* A záróesemény befejezésének időpontja a csapatok létszámától függően még változhat.</p>
+    </div>
+    <div class="section-cta">
+      {% include apply-button.html lg=true %}
     </div>
   </div>
 </section>
@@ -68,5 +67,8 @@ title: Kezdőlap
       <p class="apply-quote">Nem a legjobb projektötletek vagy a legtapasztaltabb csapatok jutnak be, hanem azok, akiknél az összkép alapján a leghatékonyabb együttműködés várható a mentorokkal.</p>
       <p>A döntésről minden csapatot értesítünk, a bejutott csapatokkal pedig a hozzájuk kijelölt mentor veszi fel a kapcsolatot.</p>
     </div>
+  </div>
+  <div class="section-cta section-cta--final">
+    {% include apply-button.html lg=true %}
   </div>
 </section>
