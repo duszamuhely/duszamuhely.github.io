@@ -1110,3 +1110,36 @@ ul:has(> .task-list-item) {
   cursor: pointer;
 }
 .apply-dialog-close:hover { background: var(--mint); color: var(--ink); }
+
+/* ---------- Főoldal: hogyan zajlik a jelentkezés ---------- */
+.apply-info { padding-top: 3.5rem; }
+.apply-info-lead { color: var(--ink-soft); max-width: 46rem; margin-bottom: 1.75rem; }
+.apply-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.apply-card {
+  background: var(--mint);
+  border-radius: 18px;
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+}
+.apply-card--select { background: var(--orange-tint); }
+.apply-card h3 { font-size: 1.25rem; margin-bottom: 0.9rem; }
+.apply-card ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+.apply-card li { margin-bottom: 0.55rem; }
+.apply-card p:last-child { margin-bottom: 0; }
+.apply-note {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  border-top: 1px solid rgba(36, 68, 63, 0.12);
+  padding-top: 0.9rem;
+}
+.apply-quote {
+  border-left: 4px solid var(--apply);
+  padding-left: 1rem;
+  font-weight: 600;
+}
+@media (max-width: 820px) {
+  .apply-grid { grid-template-columns: 1fr; }
+}

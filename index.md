@@ -40,6 +40,37 @@ title: Kezdőlap
   </div>
 </section>
 
+<section class="apply-info wrap" id="hogyan-jelentkezz" aria-labelledby="apply-info-title">
+  <h2 id="apply-info-title">Hogyan zajlik a jelentkezés?</h2>
+  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. A részletes feltételeket a <a href="{{ '/modszertani-utmutato/' | relative_url }}">módszertani útmutató</a> tartalmazza.</p>
+
+  <div class="apply-grid">
+    <div class="apply-card">
+      <h3>Mit kell beküldeni?</h3>
+      <ul>
+        <li><strong>A csapat adatai:</strong> 3–5 fős csapat, a felkészítő tanár megjelölése kötelező.</li>
+        <li><strong>A projektötlet bemutatása:</strong> írásos leírás (kb. egy A4-es oldal, de lehet több is), videó vagy prezentáció. Ötlet hiányában a <a href="{{ '/otletek/' | relative_url }}">projektötlet-listából</a> is lehet választani, és azt tetszőlegesen tovább lehet fejleszteni.</li>
+        <li><strong>Mérföldkő-terv:</strong> melyik funkció várhatóan melyik alkalomra készül el (I. workshop, II. workshop, záróesemény).</li>
+        <li><strong>Válaszok</strong> a jelentkezési űrlap kérdéseire.</li>
+      </ul>
+      <p class="apply-note">A workshopokon és a záróeseményen a csapatok részvétele kötelező. Ettől eltérni csak nagyon indokolt esetben lehet, ezt kérjük, jelezzétek a jelentkezéskor.</p>
+    </div>
+
+    <div class="apply-card apply-card--select">
+      <h3>Hogyan választunk?</h3>
+      <p>A jelentkezési időszak végén a mentorok döntenek a bejutó csapatokról. A döntés szempontjai:</p>
+      <ul>
+        <li>az ötlet kidolgozottsága,</li>
+        <li>a projekt megvalósíthatósága a csapat programozási tapasztalatához mérten,</li>
+        <li>részt tud-e venni a csapat a workshopokon és a záróeseményen,</li>
+        <li>a rendelkezésre álló mentorálási kapacitás és a mentorok jártassága a választott technológiákban.</li>
+      </ul>
+      <p class="apply-quote">Nem a legjobb projektötletek vagy a legtapasztaltabb csapatok jutnak be, hanem azok, akiknél az összkép alapján a leghatékonyabb együttműködés várható a mentorokkal.</p>
+      <p>A döntésről minden csapatot értesítünk, a bejutott csapatokkal pedig a hozzájuk kijelölt mentor veszi fel a kapcsolatot.</p>
+    </div>
+  </div>
+</section>
+
 <section class="rules wrap">
   <div class="rules-box">
     <h2>Idén változtak a szabályok</h2>
