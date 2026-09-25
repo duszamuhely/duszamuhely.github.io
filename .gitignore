@@ -12,3 +12,7 @@ vendor/
 # macOS
 .DS_Store
 Gemfile
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/duszamuhely.github.io.iml

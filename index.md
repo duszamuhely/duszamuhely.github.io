@@ -42,7 +42,7 @@ title: Kezdőlap
 
 <section class="apply-info wrap" id="hogyan-jelentkezz" aria-labelledby="apply-info-title">
   <h2 id="apply-info-title">Hogyan zajlik a jelentkezés?</h2>
-  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. A részletes feltételeket a <a href="{{ '/modszertani-utmutato/' | relative_url }}">módszertani útmutató</a> tartalmazza.</p>
+  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. A részletes feltételeket a <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">résztvevői útmutató</a> tartalmazza.</p>
 
   <div class="apply-grid">
     <div class="apply-card">
@@ -74,7 +74,7 @@ title: Kezdőlap
 <section class="rules wrap">
   <div class="rules-box">
     <h2>Idén változtak a szabályok</h2>
-    <p>Az évadban két workshop és egy záróesemény lesz. Jelentkezés előtt a csapattagok és a felkészítő tanár is olvassa el a módszertani útmutatót, ebben minden részlet benne van.</p>
-    <a href="{{ '/modszertani-utmutato/' | relative_url }}">Módszertani útmutató</a>
+    <p>Az évadban két workshop és egy záróesemény lesz. Jelentkezés előtt a csapattagok és a felkészítő tanár is olvassa el a résztvevői útmutatót, ebben minden részlet benne van.</p>
+    <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">Résztvevői útmutató</a>
   </div>
 </section>

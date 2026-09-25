@@ -1,8 +1,9 @@
 ---
 layout: doc
-title: Módszertani útmutató
+title: Résztvevői útmutató
 subtitle: A Dusza Árpád Programozóműhely működése, szabályai és elvárásai
-permalink: /modszertani-utmutato/
+frissitve: "2026. szeptember 25."
+permalink: /resztvevoi-utmutato/
 ---
 
 Jelen dokumentum célja a Dusza Árpád Programozóműhely elnevezésű, középiskolásoknak szóló informatikai tehetséggondozó program bemutatása. A leírás tartalmazza a program célját, felépítését és a résztvevőkkel szemben támasztott elvárásokat, definiált feladatokat.
@@ -13,50 +14,26 @@ A programozóműhely gondozója az Informatika-Számítástechnikatanárok Egyes
 
 A programozóműhely azoknak a középiskolás csapatoknak szól, akik saját szoftverötletüket szeretnék megvalósítani az iparban dolgozó mentorok támogatásával, akik az alábbi területeken segítik az induló csapatokat:
 
-* **Projektmenedzsment szemlélet megalapozása:** tervezés, a feladatok ütemezése és követése, a terv és a valóság közötti eltérések kezelése.
+* **Szakmai fejlődés:** kódminőség, architektúra, verziókezelés, code review, tesztelés, valamint a mesterséges intelligencia (AI) tudatos és ellenőrzött használata. Az AI a tanulást és a munkát segíti, nem helyettesíti azokat.
 * **Csapatmunka kialakítása:** a felelősségek egyértelmű elosztása és a közös munka szervezése.
-* **Szakmai minőségre való törekvés:** kódminőség, architektúra, verziókezelés, code review, tesztelés, valamint a mesterséges intelligencia (AI) tudatos és ellenőrzött használata.
+* **Projektmenedzsment szemlélet megalapozása:** tervezés, a feladatok ütemezése és követése, a terv és a valóság közötti eltérések kezelése.
 * **Prezentációs és kommunikációs készségek fejlesztése:** a projekt állapotának, döntéseinek és eredményeinek érthető, időkeretre szabott bemutatása és a kérdések megválaszolása.
 
 A műhely célja nem az érettségire való felkészítés és nem a programozás tanítása. Ezért a csapatoktól már a jelentkezéskor elvárjuk, hogy tudjanak működő programot írni.
 
-A program két személyes workshopból és egy záró eseményből áll. **Minden alkalmon működő programot és kidolgozott és begyakorolt prezentációt kell bemutatni.** A workshopokon a mentorok az ott látottak alapján döntenek a csapatok továbbhaladásáról.
+A program két személyes workshopból és egy záró eseményből áll. **Minden alkalmon működő szoftvert kell bemutatni.** A bemutatót kidolgozott, begyakorolt prezentáció keretezi, amely a szoftver fejlődését követi alkalomról alkalomra. A workshopokon a mentorok az ott látottak alapján döntenek a csapatok továbbhaladásáról.
 {: .callout}
 
 A műhely elvárásai mindenkire egyformán kötelezők: a mérföldkövek teljesítését minden csapatnak a workshopokon kell bizonyítania.
 
-## A jelentkezés
+## A részvétel feltételei
 
-**Olyan csapattagok jelentkezését várjuk, akik alapszinten már tudnak programozni** (képesek a választott programozási nyelvben/technológiában felhasználói felülettel rendelkező alkalmazásokat implementálni), és **vállalják, hogy az általuk választott technológiákban önállóan elmélyednek**, miközben a mentoruk iránymutatást nyújt számukra a felmerülő problémák megoldása során. Elvárjuk, hogy a jelentkező csapatok legalább egyik tagja jól tudjon programozni. Ugyanakkor fontos, hogy a csapat összetétele arányos legyen: nagyobb létszám esetén nem elegendő, ha kizárólag egy ember rendelkezik programozói tudással.
-
-A jelentkezéshez a csapat kifejti a saját projektötletét és megválaszolja a jelentkezési űrlapon szereplő kérdéseket.
+Olyan csapatok jelentkezését várjuk, amelyeknek tagjai **alapszinten már tudnak programozni** (képesek a választott programozási nyelvben/technológiában felhasználói felülettel rendelkező alkalmazásokat implementálni), és **vállalják, hogy az általuk választott technológiákban önállóan elmélyednek**, miközben a mentoruk iránymutatást nyújt számukra a felmerülő problémák megoldása során. Elvárjuk, hogy a jelentkező csapatok legalább egyik tagja jól tudjon programozni. Ugyanakkor fontos, hogy a csapat összetétele arányos legyen: nagyobb létszám esetén nem elegendő, ha kizárólag egy ember rendelkezik programozói tudással.
 
 * Csapatlétszám: 3–5 fő
-* Felkészítő tanár megjelölése kötelező.
-* Az ötlet bemutatásának formája: **írásos leírás** (kb. egy A4-es oldal, de lehet több is), **videó** vagy **prezentáció**.
-* Ötlet hiányában a mentorok által közzétett [ötletlistából](/otletek/) is lehet választani, amit tetszőlegesen továbbfejleszthet a csapat.
+* A workshopokon és a záró eseményen a részvétel kötelező, ettől eltérni csak nagyon indokolt esetben lehet.
 
-A jelentkezés része a **mérföldkő-terv**, amely megadja, melyik funkció várhatóan melyik alkalomra fog elkészülni:
-
-* az 1\. workshopra,
-* a 2\. workshopra,
-* a záró eseményre.
-
-A csapat a tervet az 1\. és a 2\. workshop bemutatójára a mentorral együtt aktualizálja a csapat aktuális haladása szerint. Mindig az aktuális terv a következő alkalom mércéje.
-
-A workshopokon és a záró eseményen a csapatok részvétele kötelező, amitől eltérni csak nagyon indokolt esetben lehet, és ez esetben, ezt kérjük jelezni a jelentkezésnél. Kérjük, hogy ennek figyelembevételével jelentkezzenek a csapatok a műhelybe!
-{: .callout}
-
-## Kiválasztás
-
-A mentorok jelentkezési időszak végén döntenek a bejutó csapatokról. A döntés szempontjai:
-
-* az ötlet kidolgozottsága,
-* a projekt megvalósíthatósága a csapat programozási tapasztalatához mérten,
-* részt tud-e venni a csapat a workshopokon és a záró eseményen,
-* a rendelkezésre álló mentorálási kapacitás és a mentorok kompetenciája a használni kívánt technológiákhoz.
-
-Nem a legjobb projektötletek vagy épp a legnagyobb tapasztalattal rendelkező csapatok kerülnek kiválasztásra, hanem akiknél az összkép alapján a leghatékonyabb együttműködés várható a mentorokkal. A csapatokat értesítjük a döntésről, majd a hozzájuk kijelölt mentorok felveszik velük a kapcsolatot.
+A jelentkezés menetéről és a kiválasztás szempontjairól a [főoldalon](/#hogyan-jelentkezz) tájékozódhatnak.
 
 ## Mérföldkövek
 
@@ -65,22 +42,22 @@ A program két workshopból és egy záró eseményből áll.
 <ol class="flow">
   <li><strong>1. workshop</strong><span>A vállalt funkciók működő része, tervek a többihez, a prezentáció első változata</span></li>
   <li><strong>2. workshop</strong><span>A fő funkció működik, a prezentáció közel végleges</span></li>
-  <li class="is-final"><strong>Záró esemény</strong><span>Teljes megoldás és kész prezentáció a közönség előtt</span></li>
+  <li class="is-final"><strong>Záró esemény</strong><span>Önállóan futtatható, teljes megoldás és kész prezentáció a közönség előtt</span></li>
 </ol>
 
-**A workshopok célja,** hogy a csapatok egy prezentáció keretében demonstrálják a mentorok és a csapatok előtt, hogy hogyan haladtak a projektjükkel, ehhez működő szoftvert mutatnak be. A csapat az 1\. workshopra már prezentációt készít, amelyet a 2\. alkalomra finomít, és amelynek végső formáját a záró eseményen mutatja be a közönségnek. A prezentációban strukturált módon be kell mutatniuk a projektjüket. A workshopok célja az is, hogy a csapatok gyakorolják a prezentálást és hogy tapasztalataikat megosszák a csapatokkal, akik ebből tanulhatnak.
+A csapat a mentorával közösen **mérföldkő-tervet** készít, amely megadja, melyik funkció várhatóan melyik alkalomra készül el (1. workshop, 2. workshop, záró esemény). A tervet az 1. és a 2. workshop előtt a mentorral együtt aktualizálják a tényleges haladás szerint. Mindig az aktuális terv a következő alkalom mércéje.
+
+**A workshopok célja,** hogy a csapatok megmutassák a mentoroknak és a többi csapatnak, hogyan haladtak a projektjükkel: minden alkalommal működő szoftvert mutatnak be, amely az előző alkalomhoz képest továbbfejlődött. A bemutatót strukturált prezentáció keretezi, amely a szoftverrel együtt fejlődik: első változata az 1. workshopra készül el, a 2. workshopra a szoftver aktuális állapotához igazodik, végső formáját pedig a záró eseményen látja a közönség. A workshopok arra is lehetőséget adnak, hogy a csapatok megosszák egymással a tapasztalataikat, és tanuljanak egymástól.
 
 A workshopokon a mentorok és a résztvevők kérdéseket tesznek fel, és visszajelzéseket adnak a csapatoknak.
 
-A mentorok minden workshop után döntést hoznak arról, hogy mely csapatok folytathatják a programot, és ebben a döntésben meghatározó szempont lesz a program készültségén túl a személyes jelenlét megvalósulása és a prezentációba fektetett munka mennyisége és minősége is.
-
-A workshopokkal, a záró eseménnyel és magával a prezentáció kapcsolatos részletes teljesítési kritériumokat az [1. melléklet](#1-sz-melleklet-teljesitesi-kriteriumok) tartalmazza.
+A workshopokkal, a záró eseménnyel és a prezentációval kapcsolatos részletes elvárásokat a [Teljesítési kritériumok](#teljesitesi-kriteriumok) fejezet tartalmazza.
 
 ### Kapcsolatfelvétel és kapcsolattartás a mentorral
 
 A mentor támogatást nyújt a csapatnak. Segít a tervezésben, a felmerülő problémák megoldásában és az eszközök használatában, visszajelzést ad a prezentációra, és jelzi, ha a haladás nem megfelelő. A felkészítő tanárral együtt támogatja a csapatmunkát is: segít kialakítani a tagok közötti munkamegosztást, és figyel arra, hogy minden csapattag érdemben részt vegyen a munkában. Megállapodás szerint részt vehet támogató feladatokban (például code review, páros programozás, tesztelés), de az implementációt teljes egészében a csapatnak kell elvégeznie.
 
-A kiválasztás után, az 1\. workshop előtt a mentor felveszi a kapcsolatot a csapattal. Ekkor közösen:
+A kiválasztás után, az 1. workshop előtt a mentor felveszi a kapcsolatot a csapattal. Ekkor közösen:
 
 * a mentor tisztázza a csapattal az egyes workshopok és a záróesemény céljait,
 * elkészítik a mérföldkő-tervet,
@@ -103,7 +80,7 @@ Az 1\. workshopon a csapatok, a felkészítő tanárok és a mentorok vesznek r�
 
 ### 2. workshop
 
-A 2\. workshop az elsőhöz hasonlóan zajlik. Itt már elvárás, hogy a szoftver fő funkcionalitása működjön, és hogy a prezentáció jóval kiforrottabb legyen, minél közelebb legyen a végső prezentációhoz. A bemutatót ismét visszajelzés és kérdések követik. A workshopon a csapatok és mentoruk ismét lehetőséget kapnak a személyes közös munkára.
+A 2\. workshop az elsőhöz hasonlóan zajlik. Itt már elvárás, hogy a szoftver fő funkcionalitása működjön. A prezentáció a szoftver aktuális állapotát mutatja be, és már közel áll a végleges formájához. A bemutatót ismét visszajelzés és kérdések követik. A workshopon a csapatok és mentoruk ismét lehetőséget kapnak a személyes közös munkára.
 
 ### Záró esemény
 
@@ -127,10 +104,7 @@ A csapatoknak a jelentkezéskor meg kell jelölniük felkészítő tanárukat is
 
 A korábbi évek tapasztalatai alapján azt kérjük, hogy amennyiben megoldható, a diákok aktuális informatikatanára/digitális kultúra tanára legyen a felkészítő tanár. Mivel ő napi kapcsolatban van a diákokkal, nagyobb valószínűséggel tud majd nekik segíteni abban, hogy a projektmunka útjában álló napi akadályok elhárításra kerüljenek.
 
-Budapest, 2026. szeptember 23.
-{: .doc-date}
-
-## 1. sz. melléklet – Teljesítési kritériumok
+## Teljesítési kritériumok
 
 ### 1. workshop
 
@@ -152,21 +126,21 @@ Budapest, 2026. szeptember 23.
 
 ### Záró esemény
 
-- [ ] Szerveroldallal rendelkező alkalmazásoknál a szoftver szervergépen fut.
+- [ ] A szoftvernek a fejlesztői környezettől (IDE) függetlenül, önállóan futtathatónak és telepíthetőnek kell lennie.
 - [ ] A fő felhasználási esetek hiba nélkül bemutathatók (vagy élő demóban vagy előre rögzített videóban).
 - [ ] A prezentáció kész és begyakorolt.
 - [ ] A csapat összeveti az eredményt a jelentkezéskor kitűzött céljaival, és reflektál rá.
 
 ### A prezentáció szerkezete
 
-Az egyes részekhez megadott időtartamok tájékoztató jellegűek, ezektől a csapat eltérhet.
+A prezentációnak tartalmilag az alábbi pontokat kell lefednie. Ezeken felül a csapat bármit beletehet, amit a projektjével kapcsolatban fontosnak tart. A pontok sorrendje és az egyes részek aránya a csapatra van bízva.
 
-- [ ] Csapatbemutatkozás (0,5 perc)
-- [ ] Az ötlet: célfelhasználók, probléma (1 perc)
-- [ ] Élő demó (3 perc)
-- [ ] Technológiai stack és architektúra (1 perc)
-- [ ] Minőség: tesztelés, code review, AI-használat (1 perc)
-- [ ] Csapatmunka: ki min dolgozott (1 perc)
-- [ ] Projektterv és megvalósulása, változások, tanulságok (1,5 perc)
-- [ ] Hogyan tovább (1 perc)
-- [ ] A prezentáció nem haladja meg a 10 percet. (Záróesemény)
+- [ ] Csapatbemutatkozás
+- [ ] Az ötlet: célfelhasználók, probléma
+- [ ] Élő demó
+- [ ] Technológiai stack és architektúra
+- [ ] Minőség: tesztelés, code review, AI-használat
+- [ ] Csapatmunka: ki min dolgozott
+- [ ] Projektterv és megvalósulása, változások, tanulságok
+- [ ] Hogyan tovább
+- [ ] A prezentáció nem haladja meg a 10 percet (záróesemény).

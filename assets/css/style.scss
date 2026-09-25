@@ -1143,3 +1143,18 @@ ul:has(> .task-list-item) {
 @media (max-width: 820px) {
   .apply-grid { grid-template-columns: 1fr; }
 }
+
+/* frissítés dátuma a dokumentumok fejlécében */
+.doc-updated {
+  display: inline-block;
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: var(--paper);
+  border-radius: 99px;
+  padding: 0.2rem 0.75rem;
+}
+@media (prefers-color-scheme: dark) {
+  .doc-updated { color: var(--green); }
+}
