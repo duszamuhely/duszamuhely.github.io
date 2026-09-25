@@ -1112,7 +1112,8 @@ ul:has(> .task-list-item) {
 .apply-dialog-close:hover { background: var(--mint); color: var(--ink); }
 
 /* ---------- Főoldal: hogyan zajlik a jelentkezés ---------- */
-.apply-info { padding-top: 3.5rem; }
+.apply-info { padding-top: 3.5rem; padding-bottom: 4.5rem; }
+.apply-info-lead strong { color: var(--ink); }
 .apply-info-lead { color: var(--ink-soft); max-width: 46rem; margin-bottom: 1.75rem; }
 .apply-grid {
   display: grid;

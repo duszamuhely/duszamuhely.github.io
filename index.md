@@ -42,7 +42,7 @@ title: Kezdőlap
 
 <section class="apply-info wrap" id="hogyan-jelentkezz" aria-labelledby="apply-info-title">
   <h2 id="apply-info-title">Hogyan zajlik a jelentkezés?</h2>
-  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. A részletes feltételeket a <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">résztvevői útmutató</a> tartalmazza.</p>
+  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. A részletes feltételeket a <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">résztvevői útmutató</a> tartalmazza. <strong>Idén jelentősen változtak a szabályok, ezért ha korábban már részt vettetek a műhelyben, akkor is olvassátok el az útmutatót.</strong></p>
 
   <div class="apply-grid">
     <div class="apply-card">
@@ -68,13 +68,5 @@ title: Kezdőlap
       <p class="apply-quote">Nem a legjobb projektötletek vagy a legtapasztaltabb csapatok jutnak be, hanem azok, akiknél az összkép alapján a leghatékonyabb együttműködés várható a mentorokkal.</p>
       <p>A döntésről minden csapatot értesítünk, a bejutott csapatokkal pedig a hozzájuk kijelölt mentor veszi fel a kapcsolatot.</p>
     </div>
-  </div>
-</section>
-
-<section class="rules wrap">
-  <div class="rules-box">
-    <h2>Idén változtak a szabályok</h2>
-    <p>Az évadban két workshop és egy záróesemény lesz. Jelentkezés előtt a csapattagok és a felkészítő tanár is olvassa el a résztvevői útmutatót, ebben minden részlet benne van.</p>
-    <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">Résztvevői útmutató</a>
   </div>
 </section>
