@@ -1262,3 +1262,52 @@ html { scroll-padding-top: calc(var(--header-h) + 0.75rem); }
 .doc-content .team-card h3,
 .doc-content .story-card h3,
 .doc-content .mentor h2 { scroll-margin-top: calc(var(--header-h) + 1rem); }
+
+/* ---------- Visszaszámláló a határidőig (terminálstílus) ---------- */
+.countdown {
+  margin: 1.1rem 0 0;
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--green-deep);
+}
+@media (prefers-color-scheme: dark) { .countdown { color: var(--green); } }
+.countdown-prompt { color: var(--apply); }
+.countdown-cursor { animation: cursor-blink 1.1s steps(1) infinite; margin-left: 0.1em; }
+@keyframes cursor-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .countdown-cursor { animation: none; } }
+
+/* ---------- Halvány bináris minta a menta sávban ---------- */
+.season {
+  position: relative;
+  background-color: var(--mint);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='160' font-family='monospace' font-size='14' fill='%23347462' fill-opacity='0.09'%3E%3Ctext x='8' y='22'%3E1010 0110%3C/text%3E%3Ctext x='130' y='52'%3E%7B %7D%3C/text%3E%3Ctext x='40' y='84'%3E0101 1001%3C/text%3E%3Ctext x='170' y='116'%3E%26lt;/%26gt;%3C/text%3E%3Ctext x='14' y='148'%3E1001 0101%3C/text%3E%3C/svg%3E");
+  background-size: 240px 160px;
+}
+
+/* ---------- Íves átmenet a fehér és a menta sáv között ---------- */
+.season::before,
+.season::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: var(--mint);
+  pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48 C 240 8 480 0 720 16 S 1200 44 1440 12 L 1440 48 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48 C 240 8 480 0 720 16 S 1200 44 1440 12 L 1440 48 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.season::before { top: -47px; }
+.season::after { bottom: -47px; transform: scaleY(-1); }
+/* hogy a hullám alatti tartalom ne kerüljön túl közel */
+.season .wrap { padding-top: 3.75rem; padding-bottom: 3.75rem; }
+.apply-info { padding-top: 5rem; }
+
+/* ---------- Beúszás görgetéskor ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }

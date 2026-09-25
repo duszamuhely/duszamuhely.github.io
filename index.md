@@ -16,6 +16,7 @@ title: Kezdőlap
 {% include apply-button.html lg=true %}
       <p>Határidő: <strong>2026. december 18.</strong></p>
     </div>
+    <p class="countdown" data-countdown="2026-12-18T23:59:59+01:00" hidden aria-live="polite"><span class="countdown-prompt" aria-hidden="true">&gt;</span> <span class="countdown-text"></span><span class="countdown-cursor" aria-hidden="true">_</span></p>
   </div>
 </section>
 
@@ -41,7 +42,7 @@ title: Kezdőlap
 
 <section class="apply-info wrap" id="hogyan-jelentkezz" aria-labelledby="apply-info-title">
   <h2 id="apply-info-title">Hogyan zajlik a jelentkezés?</h2>
-  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. A részletes feltételeket a <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">résztvevői útmutató</a> tartalmazza. <strong>Idén jelentősen változtak a szabályok, ezért ha korábban már részt vettetek a műhelyben, akkor is olvassátok el az útmutatót.</strong></p>
+  <p class="apply-info-lead">Középiskolás csapatokat várunk, akik már tudnak működő programot írni. <strong>Idén változtak a szabályok:</strong> az évadban két workshop és egy záróesemény lesz. Ezért ha korábban már részt vettetek a műhelyben, akkor is olvassátok el a felkészítő tanárotokkal együtt a <a href="{{ '/resztvevoi-utmutato/' | relative_url }}">résztvevői útmutatót</a>, amely a részletes feltételeket tartalmazza.</p>
 
   <div class="apply-grid">
     <div class="apply-card">
