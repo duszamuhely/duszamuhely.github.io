@@ -1158,3 +1158,9 @@ ul:has(> .task-list-item) {
 @media (prefers-color-scheme: dark) {
   .doc-updated { color: var(--green); }
 }
+
+/* lábléc: utolsó frissítés */
+.site-footer .updated { margin-left: 1rem; }
+@media (max-width: 560px) {
+  .site-footer .updated { display: block; margin: 0.3rem 0 0; }
+}

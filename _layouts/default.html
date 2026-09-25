@@ -49,7 +49,11 @@
 <footer class="site-footer">
   <div class="wrap">
     <p>A Dusza Árpád Programozóműhelyt az <a href="https://isze.hu/">Informatika-Számítástechnika Tanárok Egyesülete</a> szervezi, az <a href="https://www.inf.elte.hu/">ELTE Informatikai Kar</a> társszervezésében.</p>
-    <p class="copy">© {{ site.time | date: "%Y" }} ISZE</p>
+    {% assign honapok = "január,február,március,április,május,június,július,augusztus,szeptember,október,november,december" | split: "," %}
+    {% assign ho = site.time | date: "%-m" | minus: 1 %}
+    <p class="copy">© {{ site.time | date: "%Y" }} ISZE
+      <span class="updated">Utoljára frissítve: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}. {{ honapok[ho] }} {{ site.time | date: "%-d" }}., {{ site.time | date: "%H:%M" }}</time></span>
+    </p>
   </div>
 </footer>
 

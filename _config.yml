@@ -5,6 +5,9 @@ description: Dusza Árpád Programozóműhely – középiskolás csapatok proje
 # jelentkezési részére visz, a főoldali gomb pedig "hamarosan" feliratú.
 jelentkezes_url: ""
 
+# Időzóna: a lábléc "Utoljára frissítve" időpontja (a build ideje) magyar idő szerint jelenjen meg
+timezone: Europe/Budapest
+
 # Menü a fejlécben. Egy pont lehet sima link (title + url),
 # vagy lenyíló csoport (title + items).
 # A Jelentkezés gomb nem itt van, azt a menüsor végére a layout teszi ki.
