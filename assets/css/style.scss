@@ -7,13 +7,13 @@
   --ink-soft: #52665F;
   --paper: #FFFFFF;
   --orange: #EF8451;     /* pulóver */
-  --orange-tint: #FDEEE6;
+  --orange-tint: #FCDCCA;
   --peach: #FBE0D4;      /* arc */
   --green: #34B26A;      /* világos csík */
   --green-deep: #347462; /* sötét csík */
-  --mint: #E8F6EE;
-  --hero-disc: #D6EEE0; /* a figura mögötti korong: elválik az arc színétől */
-  --line: #D6E3DC;
+  --mint: #CFEBDA;
+  --hero-disc: #B9E2CB; /* a figura mögötti korong: elválik az arc színétől */
+  --line: #C5D8CE;
   --link: #2B6B58;
 
   --display: "Fira Sans", "Segoe UI", system-ui, sans-serif;
@@ -1374,3 +1374,87 @@ html { scroll-padding-top: calc(var(--header-h) + 0.75rem); }
   padding: 0.15rem 0.6rem;
 }
 .project-meta { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 0.9rem; }
+
+/* ================================================================
+   Markánsabb színvilág: teli színű sávok és csempék
+   ================================================================ */
+:root {
+  --band: #24443F;        /* mély zöld sáv (a logó körvonalának színe) */
+  --band-ink: #FFFFFF;
+  --band-soft: #CFE3DA;
+  --band-line: rgba(255, 255, 255, 0.22);
+  --orange-on-band: #FF9E6E;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --band: #1D3C34; }
+}
+
+/* --- Főoldal: az évad időpontjai mély zöld sávon --- */
+.season {
+  background-color: var(--band);
+  color: var(--band-ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='160' font-family='monospace' font-size='14' fill='%23ffffff' fill-opacity='0.07'%3E%3Ctext x='8' y='22'%3E1010 0110%3C/text%3E%3Ctext x='130' y='52'%3E%7B %7D%3C/text%3E%3Ctext x='40' y='84'%3E0101 1001%3C/text%3E%3Ctext x='170' y='116'%3E%26lt;/%26gt;%3C/text%3E%3Ctext x='14' y='148'%3E1001 0101%3C/text%3E%3C/svg%3E");
+}
+.season::before, .season::after { background: var(--band); }
+.season h2 { color: var(--band-ink); }
+.season .timeline time { color: var(--band-ink); }
+.season .timeline time small { color: var(--band-soft); }
+.season .timeline span { color: var(--band-soft); }
+.season .timeline li::before { background: var(--band); }
+.season .timeline .is-deadline time,
+.season .timeline .is-deadline time small { color: var(--orange-on-band); }
+.season .timeline .is-deadline span { color: var(--band-ink); }
+.season .timeline .is-final::before { background: #FFFFFF; border-color: #FFFFFF; }
+.season .timeline::before {
+  background: linear-gradient(to right, var(--orange) 0 20%, var(--green) 20% 80%, #FFFFFF 80%);
+}
+@media (max-width: 1000px) {
+  .season .timeline::before {
+    background: linear-gradient(to bottom, var(--orange) 0 20%, var(--green) 20% 80%, #FFFFFF 80%);
+  }
+}
+.season .timeline .t-time { background: rgba(255, 255, 255, 0.14); color: var(--band-ink); }
+.season .venue { border-top-color: var(--band-line); }
+.season .venue p { color: var(--band-ink); }
+.season .venue-note { color: var(--band-soft); }
+.season a { color: var(--band-ink); }
+
+/* --- Főoldal: számok teli színű csempéken --- */
+.stats li { background: var(--apply); }
+.stats li:nth-child(2n) { background: var(--green-deep); }
+.stats strong,
+.stats li:nth-child(2n) strong { color: #FFFFFF; }
+.stats span { color: rgba(255, 255, 255, 0.88); }
+@media (prefers-color-scheme: dark) {
+  .stats strong, .stats li:nth-child(2n) strong { color: #FFFFFF; }
+}
+
+/* --- Főoldal: jelentkezési kártyák erősebb szegéllyel --- */
+.apply-card { border-top: 6px solid var(--green-deep); }
+.apply-card--select { border-top-color: var(--apply); }
+
+/* --- Dokumentumoldalak fejléce mély zöld sávon --- */
+.doc-hero { background: var(--band); color: var(--band-ink); }
+.doc-hero .page-title { color: var(--band-ink); }
+.doc-subtitle { color: var(--band-soft); }
+.doc-deco { color: var(--band-ink); }
+.doc-updated { background: rgba(255, 255, 255, 0.14); color: var(--band-ink); }
+.article-kicker, .article-kicker a { color: var(--band-soft); }
+.article-byline { color: var(--band-soft); }
+.article-byline strong { color: var(--band-ink); }
+@media (prefers-color-scheme: dark) {
+  .doc-updated { color: var(--band-ink); }
+}
+
+/* --- Rólunk: pillérek teli színekkel --- */
+.doc-content .pillars li { background: var(--green-deep); color: #FFFFFF; }
+.doc-content .pillars li:nth-child(2n) { background: var(--apply); color: #FFFFFF; }
+.doc-content .pillars li:nth-child(3) { background: var(--band); color: #FFFFFF; }
+
+/* --- Kártyák: a felső csík legyen vastagabb és telítettebb --- */
+.team-card { border-top-width: 5px; border-top-color: var(--green-deep); }
+.flow li { border-top-width: 6px; }
+
+/* --- Címsorok alatti csík teli narancs a zöld helyett a dokumentumokban --- */
+.doc-content h2::before { background: var(--apply); }
+.season .timeline .is-deadline::before { background: var(--orange); border-color: var(--orange); }
