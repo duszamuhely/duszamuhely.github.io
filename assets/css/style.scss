@@ -1414,3 +1414,19 @@ html { scroll-padding-top: calc(var(--header-h) + 0.75rem); }
 /* --- Címsorok alatti csík teli narancs a zöld helyett a dokumentumokban --- */
 .doc-content h2::before { background: var(--apply); }
 .season .timeline .is-deadline::before { background: var(--orange); border-color: var(--orange); }
+
+/* a nap neve közvetlenül a dátum mellett az idővonalon */
+.timeline time .t-weekday {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.68em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: inherit;
+  opacity: 0.85;
+}
+@media (max-width: 1000px) {
+  /* függőleges idővonalon elfér a dátum mellett */
+  .timeline time .t-weekday { display: inline; margin-left: 0.4rem; }
+}

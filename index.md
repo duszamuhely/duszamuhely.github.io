@@ -26,9 +26,9 @@ title: Kezdőlap
     <ol class="timeline">
       <li class="is-deadline"><time datetime="2026-12-18"><small>2026.</small> december 18.</time><span>Jelentkezési határidő</span></li>
       <li><time datetime="2027-01-08"><small>2027.</small> január 8.</time><span>A mentorok döntenek a műhelybe jutó csapatokról</span></li>
-      <li><time datetime="2027-01-30T09:00"><small>2027.</small> január 30.</time><span>I. workshop</span><span class="t-time">9:00–15:00</span></li>
-      <li><time datetime="2027-02-20T09:00"><small>2027.</small> február 20.</time><span>II. workshop</span><span class="t-time">9:00–15:00</span></li>
-      <li class="is-final"><time datetime="2027-03-21T10:00"><small>2027.</small> március 21.</time><span>Záróesemény</span><span class="t-time">10:00–12:00*</span></li>
+      <li><time datetime="2027-01-30T09:00"><small>2027.</small> január 30. <span class="t-weekday">szombat</span></time><span>I. workshop</span><span class="t-time">9:00–15:00</span></li>
+      <li><time datetime="2027-02-20T09:00"><small>2027.</small> február 20. <span class="t-weekday">szombat</span></time><span>II. workshop</span><span class="t-time">9:00–15:00</span></li>
+      <li class="is-final"><time datetime="2027-03-21T10:00"><small>2027.</small> március 21. <span class="t-weekday">vasárnap</span></time><span>Záróesemény</span><span class="t-time">10:00–12:00*</span></li>
     </ol>
     <div class="venue">
       <p><strong>A workshopok és a záróesemény helyszíne:</strong> ELTE Informatikai Kar, Budapest XI. kerület. A pontos helyszínt a résztvevők létszámától függően választjuk ki.</p>
