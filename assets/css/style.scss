@@ -1067,49 +1067,6 @@ ul:has(> .task-list-item) {
   .site-nav .nav-cta { font-size: 0.9rem; padding: 0.35rem 0.8rem; }
 }
 
-/* ---------- Felugró ablak: az űrlap még nem nyílt meg ---------- */
-.apply-dialog {
-  width: min(26rem, calc(100vw - 2rem));
-  border: 0;
-  border-radius: 20px;
-  padding: 1.75rem 1.75rem 1.5rem;
-  background: var(--paper);
-  color: var(--ink);
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(20, 36, 31, 0.35);
-}
-.apply-dialog::backdrop { background: rgba(20, 36, 31, 0.55); }
-.apply-dialog[open] { animation: apply-pop 0.18s ease-out; }
-@keyframes apply-pop { from { transform: scale(0.94); opacity: 0; } to { transform: none; opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .apply-dialog[open] { animation: none; } }
-.apply-dialog-art {
-  width: 9rem;
-  height: 9rem;
-  object-fit: contain;
-  border-radius: 50%;
-  background: var(--hero-disc);
-  margin: 0 auto 1rem;
-  display: block;
-}
-.apply-dialog h2 { font-size: 1.35rem; margin: 0 0 0.6rem; }
-.apply-dialog p { margin: 0 0 0.8rem; }
-.apply-dialog-tip { color: var(--ink-soft); font-size: 0.95rem; }
-.apply-dialog .apply-btn { margin-top: 0.6rem; }
-.apply-dialog-close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.7rem;
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--ink-soft);
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-}
-.apply-dialog-close:hover { background: var(--mint); color: var(--ink); }
 
 /* ---------- Főoldal: hogyan zajlik a jelentkezés ---------- */
 .apply-info { padding-top: 3.5rem; padding-bottom: 4.5rem; }
@@ -1222,9 +1179,8 @@ ul:has(> .task-list-item) {
 }
 /* a menüsor gombja kicsit később csillan, hogy ne egyszerre villanjon minden */
 .site-nav .apply-btn::after { animation-delay: 7.5s; }
-/* rámutatáskor és a felugró ablakban nincs csillogás */
-.apply-btn:hover::after,
-.apply-dialog .apply-btn::after { display: none; }
+/* rámutatáskor nincs csillogás */
+.apply-btn:hover::after { display: none; }
 
 @keyframes apply-shine {
   0%, 91.7% { left: -60%; }

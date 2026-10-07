@@ -2,9 +2,9 @@ title: Dusza Műhely
 url: "https://duszamuhely.hu"   # a megosztási kép teljes címéhez kell
 description: Dusza Árpád Programozóműhely – középiskolás csapatok projektmunkája iparban dolgozó mentorokkal
 
-# Jelentkezési űrlap linkje. Amíg üres, a menüsor Jelentkezés gombja a főoldal
-# jelentkezési részére visz, a főoldali gomb pedig "hamarosan" feliratú.
-jelentkezes_url: ""
+# Jelentkezési űrlap linkje. Ha meg van adva, minden Jelentkezés gomb új lapon ezt nyitja meg.
+# Ha üresre állítod (""), a gombok a "hamarosan nyílik" felugró ablakot mutatják.
+jelentkezes_url: "https://forms.gle/x9vFBFUhAXGXprVy9"
 
 # A főoldali számok sávjában mutatott mentorszám (az eddigi összes mentor).
 # A Mentorok oldalon csak az aktuális mentorok szerepelnek.
